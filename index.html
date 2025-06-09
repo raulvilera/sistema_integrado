@@ -470,21 +470,21 @@
             .nav-tabs {
                 flex-wrap: wrap;
             }
-            
+
             .nav-tab {
                 flex: 1 0 33%;
                 padding: 12px 5px;
                 font-size: 14px;
             }
-            
+
             .form-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             .btn-group {
                 flex-direction: column;
             }
-            
+
             .btn {
                 width: 100%;
             }
@@ -733,101 +733,6 @@
             justify-content: space-between;
             margin-top: 20px;
         }
-
-        .termo-info-item {
-            flex: 1;
-        }
-
-        .download-btn {
-            margin-top: 20px;
-            text-align: center;
-        }
-
-        /* ===== ESTILOS ADICIONAIS ===== */
-        .form-row {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 15px;
-        }
-
-        .form-row .form-group {
-            flex: 1;
-            margin-bottom: 0;
-        }
-
-        .file-upload-container {
-            position: relative;
-            margin-top: 10px;
-        }
-
-        .file-upload-label {
-            display: inline-block;
-            padding: 8px 15px;
-            background-color: var(--accent-color);
-            color: white;
-            border-radius: var(--border-radius);
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .file-upload-label:hover {
-            background-color: #2980b9;
-        }
-
-        .file-upload-label i {
-            margin-right: 5px;
-        }
-
-        .file-input {
-            position: absolute;
-            left: -9999px;
-            opacity: 0;
-        }
-
-        .file-list {
-            margin-top: 10px;
-            font-size: 14px;
-        }
-
-        .file-item {
-            display: flex;
-            align-items: center;
-            padding: 5px;
-            background-color: #f0f8ff;
-            border-radius: 4px;
-            margin-bottom: 5px;
-        }
-
-        .file-item i {
-            margin-right: 5px;
-            color: var(--accent-color);
-        }
-
-        .remove-file {
-            margin-left: auto;
-            cursor: pointer;
-            color: var(--danger-color);
-        }
-
-        .period-select {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 15px;
-        }
-
-        .period-select .form-group {
-            flex: 1;
-        }
-
-        .dropdown-container {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 15px;
-        }
-
-        .dropdown-container .form-group {
-            flex: 1;
-        }
     </style>
 </head>
 <body>
@@ -854,12 +759,13 @@
         <header>
             <div class="header-content">
                 <div class="logo">
-                    <i class="fas fa-laptop"></i>
-                    Sistema de Gestão de Equipamentos
+                    <i class="fas fa-laptop"></i> Gestão de Equipamentos
                 </div>
                 <div class="user-info">
                     <span id="currentUser">Administrador</span>
-                    <button class="logout-btn" onclick="logout()">Sair</button>
+                    <button class="logout-btn" onclick="logout()">
+                        <i class="fas fa-sign-out-alt"></i> Sair
+                    </button>
                 </div>
             </div>
         </header>
@@ -867,13 +773,13 @@
         <div class="container">
             <div class="nav-tabs">
                 <div class="nav-tab active" onclick="openTab('dashboard')">
-                    <i class="fas fa-chart-line"></i> Dashboard
+                    <i class="fas fa-tachometer-alt"></i> Dashboard
                 </div>
                 <div class="nav-tab" onclick="openTab('register')">
-                    <i class="fas fa-cubes"></i> Cadastro
+                    <i class="fas fa-plus-circle"></i> Cadastro
                 </div>
                 <div class="nav-tab" onclick="openTab('reservations')">
-                    <i class="fas fa-calendar-alt"></i> Reservas
+                    <i class="fas fa-calendar-check"></i> Reservas
                 </div>
                 <div class="nav-tab" onclick="openTab('reports')">
                     <i class="fas fa-file-alt"></i> Relatórios
@@ -888,8 +794,10 @@
 
             <!-- Dashboard -->
             <div id="dashboard" class="tab-content active">
-                <h2 class="form-title">Dashboard</h2>
-                
+                <h2 class="form-title">
+                    <i class="fas fa-tachometer-alt"></i> Dashboard
+                </h2>
+
                 <div class="filter-container">
                     <div class="filter-group">
                         <label for="dashboardEquipmentFilter">Filtrar por Equipamento</label>
@@ -914,38 +822,38 @@
                         </select>
                     </div>
                 </div>
-                
+
                 <div class="dashboard-cards">
                     <div class="card">
-                        <div class="card-header"> 
-                            <div class="card-title">Em Uso</div> 
-                            <div class="card-icon primary"> 
-                                <i class="fas fa-laptop"></i> 
-                            </div> 
-                        </div> 
-                        <div class="card-body" id="inUseCount">0</div> 
-                    </div> 
-                    <div class="card"> 
-                        <div class="card-header"> 
-                            <div class="card-title">Disponíveis</div> 
-                            <div class="card-icon success"> 
-                                <i class="fas fa-check-circle"></i> 
-                            </div> 
-                        </div> 
-                        <div class="card-body" id="availableCount">0</div> 
-                    </div> 
-                    <div class="card"> 
-                        <div class="card-header"> 
-                            <div class="card-title">Em Manutenção</div> 
-                            <div class="card-icon warning"> 
-                                <i class="fas fa-tools"></i> 
-                            </div> 
-                        </div> 
-                        <div class="card-body" id="maintenanceCount">0</div> 
-                    </div> 
-                    <div class="card"> 
                         <div class="card-header">
-                            <div class="card-title">Com Avarias</div>
+                            <div class="card-title">Em Uso</div>
+                            <div class="card-icon primary">
+                                <i class="fas fa-laptop-house"></i>
+                            </div>
+                        </div>
+                        <div class="card-body" id="inUseCount">0</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Disponíveis</div>
+                            <div class="card-icon success">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                        </div>
+                        <div class="card-body" id="availableCount">0</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Em Manutenção</div>
+                            <div class="card-icon warning">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                        </div>
+                        <div class="card-body" id="maintenanceCount">0</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Danificados</div>
                             <div class="card-icon danger">
                                 <i class="fas fa-exclamation-triangle"></i>
                             </div>
@@ -953,26 +861,24 @@
                         <div class="card-body" id="damagedCount">0</div>
                     </div>
                 </div>
-                
+
                 <div class="chart-container">
-                    <canvas id="equipmentStatusChart"></canvas>
+                    <canvas id="equipmentChart"></canvas>
                 </div>
-                
-                <h3 style="margin-bottom: 15px;">Últimos Registros</h3>
+
                 <div class="table-responsive">
                     <table class="data-table">
                         <thead>
                             <tr>
-                                <th>Data</th>
                                 <th>Equipamento</th>
-                                <th>Nº Série</th>
-                                <th>Local</th>
+                                <th>Número de Série</th>
+                                <th>Localização</th>
                                 <th>Status</th>
-                                <th>Ações</th>
+                                <th>Última Atualização</th>
                             </tr>
                         </thead>
-                        <tbody id="recentActivitiesTable">
-                            <!-- Preenchido dinamicamente -->
+                        <tbody id="equipmentTableBody">
+                            <!-- Dados serão preenchidos via JavaScript -->
                         </tbody>
                     </table>
                 </div>
@@ -980,81 +886,142 @@
 
             <!-- Cadastro de Equipamentos -->
             <div id="register" class="tab-content">
-                <h2 class="form-title">Cadastro de Equipamentos</h2>
+                <h2 class="form-title">
+                    <i class="fas fa-plus-circle"></i> Cadastrar Novo Equipamento
+                </h2>
+                
+                <div class="register-form">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="equipmentType">Tipo de Equipamento</label>
+                            <select id="equipmentType" class="form-control">
+                                <option value="">Selecione...</option>
+                                <option value="Notebook do aluno">Notebook do aluno</option>
+                                <option value="Chromebooks">Chromebooks</option>
+                                <option value="Smartphone">Smartphone</option>
+                                <option value="Tablets">Tablets</option>
+                                <option value="Notebook Ultra">Notebook Ultra</option>
+                                <option value="Outro">Outro</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="equipmentBrand">Marca</label>
+                            <input type="text" id="equipmentBrand" class="form-control" placeholder="Ex: Dell, Samsung, etc.">
+                        </div>
+                        <div class="form-group">
+                            <label for="equipmentModel">Modelo</label>
+                            <input type="text" id="equipmentModel" class="form-control" placeholder="Ex: Inspiron 15, Galaxy Tab S6, etc.">
+                        </div>
+                        <div class="form-group">
+                            <label for="serialNumber">Número de Série</label>
+                            <input type="text" id="serialNumber" class="form-control" placeholder="Número único de identificação">
+                        </div>
+                        <div class="form-group">
+                            <label for="purchaseDate">Data de Aquisição</label>
+                            <input type="date" id="purchaseDate" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="warrantyExpiration">Término da Garantia</label>
+                            <input type="date" id="warrantyExpiration" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="currentLocation">Localização Atual</label>
+                            <select id="currentLocation" class="form-control">
+                                <option value="">Selecione...</option>
+                                <option value="Sala dos professores">Sala dos professores</option>
+                                <option value="Sala de informática">Sala de informática</option>
+                                <option value="Depósito 1ª andar">Depósito 1ª andar</option>
+                                <option value="Coordenação">Coordenação</option>
+                                <option value="Direção">Direção</option>
+                                <option value="Outro">Outro local</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="equipmentStatus">Status</label>
+                            <select id="equipmentStatus" class="form-control">
+                                <option value="Disponível">Disponível</option>
+                                <option value="Em uso">Em uso</option>
+                                <option value="Manutenção">Manutenção</option>
+                                <option value="Danificado">Danificado</option>
+                                <option value="Inativo">Inativo</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="additionalInfo">Informações Adicionais</label>
+                            <textarea id="additionalInfo" class="form-control" rows="3" placeholder="Detalhes, observações, etc."></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="btn-group">
+                        <button class="btn btn-primary" onclick="registerEquipment()">
+                            <i class="fas fa-save"></i> Cadastrar Equipamento
+                        </button>
+                        <button class="btn btn-secondary" onclick="clearRegisterForm()">
+                            <i class="fas fa-broom"></i> Limpar Formulário
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="registration-codes">
+                    <h3 class="report-title">Códigos de Registro Gerados</h3>
+                    <div class="codes-list" id="codesList">
+                        <!-- Códigos serão adicionados dinamicamente -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reservas -->
+            <div id="reservations" class="tab-content">
+                <h2 class="form-title">
+                    <i class="fas fa-calendar-check"></i> Gerenciamento de Reservas
+                </h2>
                 
                 <div class="filter-container">
                     <div class="filter-group">
-                        <label for="equipmentSearch">Pesquisar</label>
-                        <input type="text" id="equipmentSearch" class="form-control" placeholder="Digite para pesquisar..." onkeyup="searchEquipment()">
-                    </div>
-                    <div class="filter-group">
-                        <label for="filterStatus">Status</label>
-                        <select id="filterStatus" class="form-control" onchange="filterEquipment()">
-                            <option value="all">Todos</option>
-                            <option value="Disponível">Disponível</option>
-                            <option value="Em uso">Em uso</option>
-                            <option value="Manutenção">Manutenção</option>
-                            <option value="Com avarias">Com avarias</option>
-                            <option value="Desuso">Desuso</option>
+                        <label for="reservationStatusFilter">Filtrar por Status</label>
+                        <select id="reservationStatusFilter" class="form-control" onchange="loadReservations()">
+                            <option value="all">Todas as Reservas</option>
+                            <option value="pending">Pendentes</option>
+                            <option value="approved">Aprovadas</option>
+                            <option value="rejected">Rejeitadas</option>
+                            <option value="completed">Concluídas</option>
+                            <option value="canceled">Canceladas</option>
                         </select>
                     </div>
                     <div class="filter-group">
-                        <label>&nbsp;</label>
-                        <button class="btn btn-primary" onclick="showAddEquipmentModal()">
-                            <i class="fas fa-plus"></i> Novo Equipamento
-                        </button>
+                        <label for="reservationDateFilter">Filtrar por Data</label>
+                        <input type="date" id="reservationDateFilter" class="form-control" onchange="loadReservations()">
                     </div>
+                    <div class="filter-group">
+                        <label for="reservationUserFilter">Filtrar por Usuário</label>
+                        <input type="text" id="reservationUserFilter" class="form-control" placeholder="Nome do usuário" onchange="loadReservations()">
+                    </div>
+                </div>
+                
+                <div class="btn-group">
+                    <button class="btn btn-primary" onclick="openNewReservationModal()">
+                        <i class="fas fa-plus"></i> Nova Reserva
+                    </button>
+                    <button class="btn btn-secondary" onclick="printReservations()">
+                        <i class="fas fa-print"></i> Imprimir Relatório
+                    </button>
                 </div>
                 
                 <div class="table-responsive">
                     <table class="data-table">
                         <thead>
                             <tr>
-                                <th>Data Registro</th>
-                                <th>Nº de Série</th>
-                                <th>Nº Registro</th>
+                                <th>ID</th>
                                 <th>Equipamento</th>
-                                <th>Local</th>
-                                <th>Quantidade</th>
-                                <th>Status</th>
-                                <th>Ações</th>
-                            </tr>
-                        </thead>
-                        <tbody id="equipmentTable">
-                            <!-- Preenchido dinamicamente -->
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <!-- Reservas -->
-            <div id="reservations" class="tab-content">
-                <h2 class="form-title">Gestão de Reservas</h2>
-                
-                <div class="btn-group">
-                    <button class="btn btn-primary" onclick="showNewReservationModal()">
-                        <i class="fas fa-calendar-plus"></i> Nova Reserva
-                    </button>
-                    <button class="btn btn-secondary" onclick="refreshReservations()">
-                        <i class="fas fa-sync-alt"></i> Atualizar
-                    </button>
-                </div>
-                
-                <div class="table-responsive" style="margin-top: 20px;">
-                    <table class="data-table">
-                        <thead>
-                            <tr>
+                                <th>Usuário</th>
                                 <th>Data</th>
-                                <th>Professor</th>
-                                <th>Equipamento</th>
-                                <th>Quantidade</th>
-                                <th>Local</th>
+                                <th>Horário</th>
                                 <th>Status</th>
                                 <th>Ações</th>
                             </tr>
                         </thead>
-                        <tbody id="reservationsTable">
-                            <!-- Preenchido dinamicamente -->
+                        <tbody id="reservationsTableBody">
+                            <!-- Dados serão preenchidos via JavaScript -->
                         </tbody>
                     </table>
                 </div>
@@ -1062,734 +1029,314 @@
 
             <!-- Relatórios -->
             <div id="reports" class="tab-content">
-                <h2 class="form-title">Relatórios de Equipamentos</h2>
+                <h2 class="form-title">
+                    <i class="fas fa-file-alt"></i> Relatórios e Estatísticas
+                </h2>
                 
                 <div class="filter-container">
                     <div class="filter-group">
                         <label for="reportType">Tipo de Relatório</label>
-                        <select id="reportType" class="form-control" onchange="generateReport()">
-                            <option value="classification">Classificação por Tipo</option>
-                            <option value="status">Status dos Equipamentos</option>
-                            <option value="location">Distribuição por Local</option>
+                        <select id="reportType" class="form-control" onchange="updateReport()">
+                            <option value="equipmentStatus">Status dos Equipamentos</option>
+                            <option value="reservationsByMonth">Reservas por Mês</option>
+                            <option value="maintenanceHistory">Histórico de Manutenções</option>
+                            <option value="equipmentByLocation">Equipamentos por Local</option>
                         </select>
                     </div>
                     <div class="filter-group">
-                        <label for="reportDate">Período</label>
-                        <select id="reportDate" class="form-control" onchange="generateReport()">
-                            <option value="all">Todos</option>
-                            <option value="today">Hoje</option>
-                            <option value="week">Esta semana</option>
-                            <option value="month">Este mês</option>
-                            <option value="year">Este ano</option>
+                        <label for="reportDateRange">Período</label>
+                        <select id="reportDateRange" class="form-control" onchange="updateReport()">
+                            <option value="last30">Últimos 30 dias</option>
+                            <option value="last90">Últimos 90 dias</option>
+                            <option value="currentMonth">Mês Atual</option>
+                            <option value="lastMonth">Mês Anterior</option>
                             <option value="custom">Personalizado</option>
                         </select>
                     </div>
-                    <div class="filter-group" id="customDateRange" style="display: none;">
-                        <label for="startDate">De</label>
-                        <input type="date" id="startDate" class="form-control">
-                        <label for="endDate">Até</label>
-                        <input type="date" id="endDate" class="form-control">
+                    <div class="filter-group" id="customDateRangeGroup" style="display: none;">
+                        <label for="reportCustomStart">Data Inicial</label>
+                        <input type="date" id="reportCustomStart" class="form-control" onchange="updateReport()">
+                    </div>
+                    <div class="filter-group" id="customDateRangeGroupEnd" style="display: none;">
+                        <label for="reportCustomEnd">Data Final</label>
+                        <input type="date" id="reportCustomEnd" class="form-control" onchange="updateReport()">
                     </div>
                 </div>
                 
                 <div class="btn-group">
-                    <button class="btn btn-primary" onclick="generateReport()">
-                        <i class="fas fa-file-alt"></i> Gerar Relatório
+                    <button class="btn btn-primary" onclick="generatePDFReport()">
+                        <i class="fas fa-file-pdf"></i> Exportar para PDF
                     </button>
-                    <button class="btn btn-success" onclick="exportReport()">
-                        <i class="fas fa-file-export"></i> Exportar
-                    </button>
-                    <button class="btn btn-secondary" onclick="printReport()">
-                        <i class="fas fa-print"></i> Imprimir
+                    <button class="btn btn-success" onclick="exportToExcel()">
+                        <i class="fas fa-file-excel"></i> Exportar para Excel
                     </button>
                 </div>
                 
-                <div id="reportContent" style="margin-top: 30px;">
-                    <!-- Relatório de Classificação por Tipo -->
-                    <div id="classificationReport" class="report-section">
-                        <h3 class="report-title">CLASSIFICAÇÃO DE EQUIPAMENTOS</h3>
-                        
-                        <div class="equipment-category">
-                            <div class="category-title">SMARTPHONE</div>
-                            <div class="table-responsive">
-                                <table class="data-table">
-                                    <thead>
-                                        <tr>
-                                            <th>Nº de Identificação</th>
-                                            <th>Status</th>
-                                            <th>Local</th>
-                                            <th>Data Registro</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="smartphoneReport">
-                                        <!-- Preenchido dinamicamente -->
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                        
-                        <div class="equipment-category">
-                            <div class="category-title">TABLETS</div>
-                            <div class="table-responsive">
-                                <table class="data-table">
-                                    <thead>
-                                        <tr>
-                                            <th>Nº de Identificação</th>
-                                            <th>Status</th>
-                                            <th>Local</th>
-                                            <th>Data Registro</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="tabletsReport">
-                                        <!-- Preenchido dinamicamente -->
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                        
-                        <div class="equipment-category">
-                            <div class="category-title">NOTEBOOK DO ALUNO</div>
-                            <div class="table-responsive">
-                                <table class="data-table">
-                                    <thead>
-                                        <tr>
-                                            <th>Nº de Identificação</th>
-                                            <th>Status</th>
-                                            <th>Local</th>
-                                            <th>Data Registro</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="notebookReport">
-                                        <!-- Preenchido dinamicamente -->
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                        
-                        <div class="equipment-category">
-                            <div class="category-title">CHROMEBOOKS</div>
-                            <div class="table-responsive">
-                                <table class="data-table">
-                                    <thead>
-                                        <tr>
-                                            <th>Nº de Identificação</th>
-                                            <th>Status</th>
-                                            <th>Local</th>
-                                            <th>Data Registro</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="chromebooksReport">
-                                        <!-- Preenchido dinamicamente -->
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Outros tipos de relatório (inicialmente ocultos) -->
-                    <div id="statusReport" class="report-section" style="display: none;">
-                        <!-- Conteúdo do relatório por status -->
-                    </div>
-                    
-                    <div id="locationReport" class="report-section" style="display: none;">
-                        <!-- Conteúdo do relatório por local -->
-                    </div>
+                <div class="chart-container">
+                    <canvas id="reportChart"></canvas>
+                </div>
+                
+                <div class="table-responsive">
+                    <table class="data-table" id="reportTable">
+                        <thead>
+                            <tr id="reportTableHeader">
+                                <!-- Cabeçalho será preenchido dinamicamente -->
+                            </tr>
+                        </thead>
+                        <tbody id="reportTableBody">
+                            <!-- Dados serão preenchidos via JavaScript -->
+                        </tbody>
+                    </table>
                 </div>
             </div>
 
             <!-- Manutenção -->
             <div id="maintenance" class="tab-content">
-                <h2 class="form-title">Controle de Manutenção</h2>
+                <h2 class="form-title">
+                    <i class="fas fa-tools"></i> Registro de Manutenções
+                </h2>
                 
                 <div class="filter-container">
                     <div class="filter-group">
-                        <label for="maintenanceStatus">Status</label>
-                        <select id="maintenanceStatus" class="form-control" onchange="filterMaintenance()">
-                            <option value="all">Todos</option>
-                            <option value="Pendente">Pendente</option>
-                            <option value="Em andamento">Em andamento</option>
-                            <option value="Concluído">Concluído</option>
+                        <label for="maintenanceStatusFilter">Filtrar por Status</label>
+                        <select id="maintenanceStatusFilter" class="form-control" onchange="loadMaintenanceRecords()">
+                            <option value="all">Todos os Registros</option>
+                            <option value="pending">Pendentes</option>
+                            <option value="in_progress">Em Andamento</option>
+                            <option value="completed">Concluídos</option>
+                            <option value="canceled">Cancelados</option>
                         </select>
                     </div>
                     <div class="filter-group">
-                        <label>&nbsp;</label>
-                        <button class="btn btn-primary" onclick="showMaintenanceModal()">
-                            <i class="fas fa-tools"></i> Nova Manutenção
-                        </button>
+                        <label for="maintenanceEquipmentFilter">Filtrar por Equipamento</label>
+                        <select id="maintenanceEquipmentFilter" class="form-control" onchange="loadMaintenanceRecords()">
+                            <option value="all">Todos os Equipamentos</option>
+                            <!-- Opções serão preenchidas dinamicamente -->
+                        </select>
                     </div>
+                </div>
+                
+                <div class="btn-group">
+                    <button class="btn btn-primary" onclick="openNewMaintenanceModal()">
+                        <i class="fas fa-plus"></i> Nova Manutenção
+                    </button>
                 </div>
                 
                 <div class="table-responsive">
                     <table class="data-table">
                         <thead>
                             <tr>
-                                <th>Data</th>
+                                <th>ID</th>
                                 <th>Equipamento</th>
-                                <th>Nº Série</th>
+                                <th>Número de Série</th>
                                 <th>Problema</th>
-                                <th>Técnico</th>
+                                <th>Data Registro</th>
                                 <th>Status</th>
                                 <th>Ações</th>
                             </tr>
                         </thead>
-                        <tbody id="maintenanceTable">
-                            <!-- Preenchido dinamicamente -->
+                        <tbody id="maintenanceTableBody">
+                            <!-- Dados serão preenchidos via JavaScript -->
                         </tbody>
                     </table>
                 </div>
             </div>
 
-            <!-- Aba de Registro -->
+            <!-- Registro -->
             <div id="registration" class="tab-content">
                 <h2 class="form-title">
-                    <i class="fas fa-clipboard-check"></i> Registro de Retirada e Entrega de Equipamentos
+                    <i class="fas fa-clipboard-list"></i> Registro de Atividades
                 </h2>
-
-                <div class="register-form">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="teacherName">NOME DO PROFESSOR:</label>
-                            <select id="teacherName" class="form-control" onchange="fillTeacherEmail()">
-                                <option value="">Selecione o professor</option>
-                                <option value="ADEMAR RIBEIRO DE SOUZA">ADEMAR RIBEIRO DE SOUZA</option>
-                                <option value="ALEX LUTH PEREIRA MARANHAO">ALEX LUTH PEREIRA MARANHAO</option>
-                                <option value="ALEXANDRE SILVA LIMA">ALEXANDRE SILVA LIMA</option>
-                                <option value="WILSON RODRIGUES MOTA">WILSON RODRIGUES MOTA</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="teacherEmail">E-MAIL:</label>
-                            <input type="email" id="teacherEmail" class="form-control" readonly>
-                            <div class="auto-fill-label">Preenchimento automático ao selecionar o professor</div>
-                        </div>
+                
+                <div class="filter-container">
+                    <div class="filter-group">
+                        <label for="activityTypeFilter">Filtrar por Tipo</label>
+                        <select id="activityTypeFilter" class="form-control" onchange="loadActivities()">
+                            <option value="all">Todas as Atividades</option>
+                            <option value="equipment">Equipamentos</option>
+                            <option value="reservation">Reservas</option>
+                            <option value="maintenance">Manutenções</option>
+                            <option value="user">Usuários</option>
+                        </select>
                     </div>
-
-                    <h3 style="margin: 20px 0 15px; color: var(--primary-color);">Equipamentos</h3>
-
-                    <div id="equipmentContainer">
-                        <div class="equipment-row">
-                            <div class="form-group">
-                                <label for="equipmentType1">APARELHO:</label>
-                                <select id="equipmentType1" class="form-control" onchange="updateIdentificationNumbers('1')">
-                                    <option value="">Selecione o aparelho</option>
-                                    <option value="NOTEBOOK">NOTEBOOK</option>
-                                    <option value="TABLET">TABLET</option>
-                                    <option value="SMARTPHONE">SMARTPHONE</option>
-                                    <option value="HEAD SET">HEAD SET</option>
-                                    <option value="CHROMEBOOK">CHROMEBOOK</option>
-                                    <option value="CAIXA DE SOM">CAIXA DE SOM</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="identificationNumber1">N° DE IDENTIFICAÇÃO:</label>
-                                <select id="identificationNumber1" class="form-control" onchange="fillSerialNumber('1')">
-                                    <option value="">Selecione o aparelho primeiro</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="serialNumber1">N° DE SÉRIE:</label>
-                                <input type="text" id="serialNumber1" class="form-control" readonly>
-                                <div class="auto-fill-label">Preenchido automaticamente</div>
-                            </div>
-                            <div class="form-group">
-                                <label for="quantity1">QUANTIDADE:</label>
-                                <input type="number" id="quantity1" class="form-control" min="1" value="1">
-                            </div>
-                            <button class="remove-equipment-btn" onclick="removeEquipment(this)">
-                                <i class="fas fa-times"></i>
-                            </button>
-                        </div>
+                    <div class="filter-group">
+                        <label for="activityUserFilter">Filtrar por Usuário</label>
+                        <input type="text" id="activityUserFilter" class="form-control" placeholder="Nome do usuário" onchange="loadActivities()">
                     </div>
-
-                    <button class="btn btn-primary" onclick="addEquipment()">
-                        <i class="fas fa-plus"></i> Adicionar Equipamento
-                    </button>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="studentClass">TURMA:</label>
-                            <select id="studentClass" class="form-control" required onchange="updateRoom()">
-                                <option value="">Selecione a turma</option>
-                                <option value="6° ANO A MANHA">6° ANO A MANHA</option>
-                                <option value="6° ANO B MANHA">6° ANO B MANHA</option>
-                                <option value="6° ANO C MANHA">6° ANO C MANHA</option>
-                                <option value="4050 - ADMINISTRAÇÃO - 2ª SERIE A MANHA">4050 - ADMINISTRAÇÃO - 2ª SERIE A MANHA</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="room">SALA:</label>
-                            <input type="text" id="room" class="form-control" readonly>
-                            <div class="auto-fill-label">Preenchimento automático com base na turma</div>
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="withdrawalDate">DATA DA RETIRADA:</label>
-                            <input type="date" id="withdrawalDate" class="form-control" value="">
-                        </div>
-                        <div class="form-group">
-                            <label for="returnDate">DATA DA ENTREGA:</label>
-                            <input type="date" id="returnDate" class="form-control" value="">
-                        </div>
-                    </div>
-
-                    <div class="period-select">
-                        <div class="form-group">
-                            <label for="withdrawalPeriod">PERÍODO DA RETIRADA:</label>
-                            <select id="withdrawalPeriod" class="form-control" required>
-                                <option value="">Selecione</option>
-                                <option value="Manhã">Manhã</option>
-                                <option value="Tarde">Tarde</option>
-                                <option value="Noite">Noite</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="returnPeriod">PERÍODO DA ENTREGA:</label>
-                            <select id="returnPeriod" class="form-control" required>
-                                <option value="">Selecione</option>
-                                <option value="Manhã">Manhã</option>
-                                <option value="Tarde">Tarde</option>
-                                <option value="Noite">Noite</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="time-input-group">
-                        <div class="form-group">
-                            <label for="withdrawalTime">HORÁRIO DA RETIRADA:</label>
-                            <input type="time" id="withdrawalTime" class="form-control" value="">
-                        </div>
-                        <div class="form-group">
-                            <label for="returnTime">HORÁRIO DA ENTREGA:</label>
-                            <input type="time" id="returnTime" class="form-control" value="">
-                        </div>
-                    </div>
-
-                    <div class="dropdown-container">
-                        <div class="form-group">
-                            <label for="registrationCode">CÓDIGO DO REGISTRO *</label>
-                            <select id="registrationCode" class="form-control" required>
-                                <option value="">Selecione o código</option>
-                                <option value="PROATI - 001">PROATI - 001 (Raul)</option>
-                                <option value="PROATI - 002">PROATI - 002 (Juarez)</option>
-                                <option value="PROATI - 003">PROATI - 003 (Júlio)</option>
-                                <option value="CGP - 004">CGP - 004 (ERINEIDE)</option>
-                                <option value="CGP - 005">CGP - 005 (PATRÍCIA)</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="observationPeriod">PERIODO:</label>
-                            <select id="observationPeriod" class="form-control" required>
-                                <option value="">Selecione</option>
-                                <option value="Manhã">Manhã</option>
-                                <option value="Tarde">Tarde</option>
-                                <option value="Noite">Noite</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="observation">OBSERVAÇÃO:</label>
-                        <textarea id="observation" class="form-control" rows="3" placeholder="Observações adicionais"></textarea>
-
-                        <div class="file-upload-container">
-                            <label class="file-upload-label">
-                                <i class="fas fa-paperclip"></i> Anexar arquivo
-                                <input type="file" id="fileUpload" class="file-input" onchange="handleFileUpload()">
-                            </label>
-                            <div id="fileList" class="file-list"></div>
-                        </div>
-                    </div>
-
-                    <div class="btn-group">
-                        <button class="btn btn-success" onclick="registerEquipment()">
-                            <i class="fas fa-save"></i> REGISTRAR
-                        </button>
-                        <button class="btn btn-secondary" onclick="clearForm()">
-                            <i class="fas fa-eraser"></i> LIMPAR
-                        </button>
-                        <button class="btn btn-primary" onclick="generateTermo()">
-                            <i class="fas fa-file-pdf"></i> GERAR TERMO
-                        </button>
+                    <div class="filter-group">
+                        <label for="activityDateFilter">Filtrar por Data</label>
+                        <input type="date" id="activityDateFilter" class="form-control" onchange="loadActivities()">
                     </div>
                 </div>
-
-                <div id="termoContainer" class="termo-container">
-                    <h3 class="termo-title">TERMO DE RESPONSABILIDADE PELO USO E DEVOLUÇÃO DE APARELHOS</h3>
-                    <div class="termo-content">
-                        <p>
-                            Eu, <span id="termoTeacherName">_____</span>,
-                            professor(a) da turma <span id="termoClass">_____</span>,
-                            declaro estar ciente e de acordo com as responsabilidades quanto ao uso dos aparelhos listados abaixo,
-                            os quais foram retirados em perfeitas condições de funcionamento.
-                        </p>
-
-                        <p>Comprometo-me a:</p>
-                        <ul>
-                            <li>Zelar pelo bom uso dos aparelhos sob minha posse e dos meus alunos durante o período de utilização;</li>
-                            <li>Devolver todos os equipamentos nas mesmas condições em que foram entregues;</li>
-                        </ul>
-
-                        <p><strong>OBSERVAÇÃO:</strong> Comunicar imediatamente qualquer dano ou irregularidade ocorrida durante o uso.</p>
-
-                        <table class="termo-table">
-                            <thead>
-                                <tr>
-                                    <th>Aparelho</th>
-                                    <th>Nº Identificação</th>
-                                    <th>Nº Série</th>
-                                    <th>Quantidade</th>
-                                    <th>Status</th>
-                                </tr>
-                            </thead>
-                            <tbody id="termoEquipmentTable">
-                                <!-- Equipamentos serão inseridos aqui -->
-                            </tbody>
-                        </table>
-
-                        <div class="termo-info">
-                            <div class="termo-info-item">
-                                <p>Assinatura do(a) Professor(a): _____</p>
-                            </div>
-                            <div class="termo-info-item">
-                                <p>Turma: <span id="termoClass2">_____</span></p>
-                            </div>
-                        </div>
-
-                        <div class="termo-info">
-                            <div class="termo-info-item"> 
-                                <p>Data da Retirada: <span id="termoWithdrawalDate">//________</span></p> 
-                            </div> 
-                            <div class="termo-info-item"> 
-                                <p>Horário da Retirada: <span id="termoWithdrawalTime">____________</span></p> 
-                            </div> 
-                        </div> 
-                        
-                        <div class="termo-info"> 
-                            <div class="termo-info-item"> 
-                                <p>Data da Devolução: <span id="termoReturnDate">//________</span></p> 
-                            </div> 
-                            <div class="termo-info-item"> 
-                                <p>Horário da Devolução: <span id="termoReturnTime">____________</span></p> 
-                            </div> 
-                        </div> 
-                        
-                        <div class="termo-info"> 
-                            <div class="termo-info-item"> 
-                                <p>Período da Retirada: <span id="termoWithdrawalPeriod">____________</span></p> 
-                            </div> 
-                            <div class="termo-info-item"> 
-                                <p>Período da Devolução: <span id="termoReturnPeriod">____________</span></p> 
-                            </div>
-                        </div>
-
-                        <div class="termo-signature">
-                            <p>Registrado por: <span id="termoRegistrant">_____</span></p>
-                            <p>Código: <span id="termoRegistrationCode">_____</span></p>
-                            <p>Período: <span id="termoObservationPeriod">_____</span></p>
-                        </div>
-                    </div>
-
-                    <div class="download-btn">
-                        <button class="btn btn-primary" onclick="generatePDF()">
-                            <i class="fas fa-download"></i> Baixar Termo em PDF
-                        </button>
-                    </div>
+                
+                <div class="history-list" id="activityList">
+                    <!-- Atividades serão carregadas dinamicamente -->
                 </div>
-
-                <div class="registration-table">
-                    <h3 class="form-title">
-                        <i class="fas fa-list"></i> Registros de Equipamentos
-                    </h3>
-                    <div class="table-responsive">
-                        <table class="data-table">
-                            <thead>
-                                <tr>
-                                    <th>Professor</th>
-                                    <th>Equipamento</th>
-                                    <th>ID</th>
-                                    <th>Série</th>
-                                    <th>Qtd</th>
-                                    <th>Retirada</th>
-                                    <th>Devolução</th>
-                                    <th>Status</th>
-                                </tr>
-                            </thead>
-                            <tbody id="registrationTable">
-                                <!-- Registros serão inseridos aqui -->
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal para Cadastro de Equipamento -->
-    <div id="equipmentModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="modal-title">Cadastrar Novo Equipamento</h3>
-                <button class="modal-close" onclick="closeModal('equipmentModal')">&times;</button>
-            </div>
-            <div class="modal-body">
-                <form id="equipmentForm">
-                    <div class="form-grid">
-                        <div class="form-group">
-                            <label for="registrationDate">Data do Registro</label>
-                            <input type="date" id="registrationDate" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="serialNumber">Nº de Série</label>
-                            <input type="text" id="serialNumber" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="registerNumber">Nº do Registro</label>
-                            <input type="text" id="registerNumber" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="equipmentType">Aparelho</label>
-                            <select id="equipmentType" class="form-control" required>
-                                <option value="">Selecione...</option>
-                                <option value="Notebook do aluno">Notebook do aluno</option>
-                                <option value="Chromebooks">Chromebooks</option>
-                                <option value="Smartphone">Smartphone</option>
-                                <option value="Tablets">Tablets</option>
-                                <option value="Notebook Ultra">Notebook Ultra</option>
-                                <option value="Datashow">Datashow</option>
-                                <option value="Desktop Lenovo">Desktop Lenovo</option>
-                                <option value="Head Set">Head Set</option>
-                                <option value="Caixas de som">Caixas de som</option>
-                                <option value="Microfones">Microfones</option>
-                                <option value="Plataforma de Carregamento">Plataforma de Carregamento</option>
-                                <option value="TVs">TVs</option>
-                                <option value="Impressora">Impressora</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="equipmentLocation">Local</label>
-                            <select id="equipmentLocation" class="form-control" required>
-                                <option value="">Selecione...</option>
-                                <option value="Sala dos professores">Sala dos professores</option>
-                                <option value="Sala de informática">Sala de informática</option>
-                                <option value="Depósito 1ª andar">Depósito 1ª andar</option>
-                                <option value="Coordenação">Coordenação</option>
-                                <option value="Vice Direção">Vice Direção</option>
-                                <option value="Secretaria">Secretaria</option>
-                                <option value="Direção">Direção</option>
-                                <option value="Anfiteatro">Anfiteatro</option>
-                                <option value="Sala de aula">Sala de aula</option>
-                                <option value="Quadra">Quadra</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="equipmentQuantity">Quantidade</label>
-                            <input type="number" id="equipmentQuantity" class="form-control" min="1" value="1" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="equipmentCondition">Condição</label>
-                            <select id="equipmentCondition" class="form-control" required>
-                                <option value="Disponível">Disponível</option>
-                                <option value="Em uso">Em uso</option>
-                                <option value="Manutenção">Manutenção</option>
-                                <option value="Com avarias">Com avarias</option>
-                                <option value="Desuso">Desuso</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="equipmentNotes">Observações</label>
-                            <textarea id="equipmentNotes" class="form-control" rows="3"></textarea>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-secondary" onclick="closeModal('equipmentModal')">Cancelar</button>
-                <button class="btn btn-primary" onclick="saveEquipment()">Salvar</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal para Edição de Equipamento -->
-    <div id="editEquipmentModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="modal-title">Editar Equipamento</h3>
-                <button class="modal-close" onclick="closeModal('editEquipmentModal')">&times;</button>
-            </div>
-            <div class="modal-body">
-                <!-- Preenchido dinamicamente -->
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-secondary" onclick="closeModal('editEquipmentModal')">Cancelar</button>
-                <button class="btn btn-primary" onclick="updateEquipment()">Atualizar</button>
             </div>
         </div>
     </div>
 
     <!-- Modal para Nova Reserva -->
-    <div id="reservationModal" class="modal">
+    <div id="newReservationModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title">Nova Reserva de Equipamento</h3>
-                <button class="modal-close" onclick="closeModal('reservationModal')">&times;</button>
+                <h3 class="modal-title">
+                    <i class="fas fa-calendar-plus"></i> Nova Reserva de Equipamento
+                </h3>
+                <button class="modal-close" onclick="closeModal('newReservationModal')">&times;</button>
             </div>
             <div class="modal-body">
-                <form id="reservationForm">
-                    <div class="form-grid">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="reservationEquipment">Equipamento</label>
+                        <select id="reservationEquipment" class="form-control">
+                            <!-- Opções serão preenchidas dinamicamente -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="reservationUser">Usuário</label>
+                        <input type="text" id="reservationUser" class="form-control" placeholder="Nome do usuário">
+                    </div>
+                    <div class="form-group">
+                        <label for="reservationDate">Data</label>
+                        <input type="date" id="reservationDate" class="form-control">
+                    </div>
+                    <div class="time-input-group">
                         <div class="form-group">
-                            <label for="reservationDate">Data da Reserva</label>
-                            <input type="date" id="reservationDate" class="form-control" required>
+                            <label for="reservationStartTime">Hora Início</label>
+                            <input type="time" id="reservationStartTime" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label for="reservationTeacher">Professor</label>
-                            <select id="reservationTeacher" class="form-control" required>
-                                <option value="">Selecione...</option>
-                                <!-- Preenchido dinamicamente -->
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="reservationEquipment">Equipamento</label>
-                            <select id="reservationEquipment" class="form-control" required onchange="checkEquipmentAvailability()">
-                                <option value="">Selecione...</option>
-                                <option value="Notebook do aluno">Notebook do aluno</option>
-                                <option value="Chromebooks">Chromebooks</option>
-                                <option value="Smartphone">Smartphone</option>
-                                <option value="Tablets">Tablets</option>
-                                <option value="Notebook Ultra">Notebook Ultra</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="reservationQuantity">Quantidade</label>
-                            <input type="number" id="reservationQuantity" class="form-control" min="1" value="1" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="reservationLocation">Local de Uso</label>
-                            <select id="reservationLocation" class="form-control" required>
-                                <option value="">Selecione...</option>
-                                <option value="Sala dos professores">Sala dos professores</option>
-                                <option value="Sala de informática">Sala de informática</option>
-                                <option value="Sala de aula">Sala de aula</option>
-                                <option value="Anfiteatro">Anfiteatro</option>
-                                <option value="Quadra">Quadra</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="reservationClass">Turma/Disciplina</label>
-                            <input type="text" id="reservationClass" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="reservationPeriod">Período</label>
-                            <select id="reservationPeriod" class="form-control" required>
-                                <option value="Manhã">Manhã</option>
-                                <option value="Tarde">Tarde</option>
-                                <option value="Noite">Noite</option>
-                            </select>
+                            <label for="reservationEndTime">Hora Fim</label>
+                            <input type="time" id="reservationEndTime" class="form-control">
                         </div>
                     </div>
-                    <div id="availabilityInfo" class="schedule-info" style="display: none;">
-                        <!-- Preenchido dinamicamente -->
+                    <div class="form-group">
+                        <label for="reservationPurpose">Finalidade</label>
+                        <textarea id="reservationPurpose" class="form-control" rows="3" placeholder="Descreva a finalidade da reserva"></textarea>
                     </div>
-                </form>
+                </div>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-secondary" onclick="closeModal('reservationModal')">Cancelar</button>
-                <button class="btn btn-primary" onclick="saveReservation()">Confirmar Reserva</button>
+                <button class="btn btn-secondary" onclick="closeModal('newReservationModal')">Cancelar</button>
+                <button class="btn btn-primary" onclick="submitReservation()">Salvar Reserva</button>
             </div>
         </div>
     </div>
 
-    <!-- Modal para Detalhes da Reserva -->
-    <div id="reservationDetailModal" class="modal">
+    <!-- Modal para Nova Manutenção -->
+    <div id="newMaintenanceModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title">Detalhes da Reserva</h3>
-                <button class="modal-close" onclick="closeModal('reservationDetailModal')">&times;</button>
-            </div>
-            <div class="modal-body" id="reservationDetailContent">
-                <!-- Preenchido dinamicamente -->
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-secondary" onclick="closeModal('reservationDetailModal')">Fechar</button>
-                <button id="cancelReservationBtn" class="btn btn-danger" style="display: none;" onclick="cancelReservation()">Cancelar Reserva</button>
-                <button id="completeReservationBtn" class="btn btn-success" style="display: none;" onclick="completeReservation()">Finalizar Reserva</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal para Manutenção -->
-    <div id="maintenanceModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="modal-title">Registrar Manutenção</h3>
-                <button class="modal-close" onclick="closeModal('maintenanceModal')">&times;</button>
+                <h3 class="modal-title">
+                    <i class="fas fa-tools"></i> Registrar Nova Manutenção
+                </h3>
+                <button class="modal-close" onclick="closeModal('newMaintenanceModal')">&times;</button>
             </div>
             <div class="modal-body">
-                <form id="maintenanceForm">
-                    <div class="form-grid">
-                        <div class="form-group">
-                            <label for="maintenanceEquipment">Equipamento</label>
-                            <select id="maintenanceEquipment" class="form-control" required>
-                                <option value="">Selecione...</option>
-                                <!-- Preenchido dinamicamente -->
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="maintenanceSerial">Nº de Série</label>
-                            <input type="text" id="maintenanceSerial" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="maintenanceDate">Data</label>
-                            <input type="date" id="maintenanceDate" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="maintenanceProblem">Problema Relatado</label>
-                            <textarea id="maintenanceProblem" class="form-control" rows="3" required></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="maintenanceTechnician">Técnico Responsável</label>
-                            <input type="text" id="maintenanceTechnician" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="maintenanceStatus">Status</label>
-                            <select id="maintenanceStatus" class="form-control" required>
-                                <option value="Pendente">Pendente</option>
-                                <option value="Em andamento">Em andamento</option>
-                                <option value="Concluído">Concluído</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="maintenanceSolution">Solução Aplicada</label>
-                            <textarea id="maintenanceSolution" class="form-control" rows="3"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="maintenanceCost">Custo (R$)</label>
-                            <input type="number" id="maintenanceCost" class="form-control" min="0" step="0.01">
-                        </div>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="maintenanceEquipment">Equipamento</label>
+                        <select id="maintenanceEquipment" class="form-control" onchange="loadEquipmentDetails()">
+                            <!-- Opções serão preenchidas dinamicamente -->
+                        </select>
                     </div>
-                </form>
+                    <div class="form-group">
+                        <label for="maintenanceSerialNumber">Número de Série</label>
+                        <input type="text" id="maintenanceSerialNumber" class="form-control" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="maintenanceProblem">Problema Relatado</label>
+                        <textarea id="maintenanceProblem" class="form-control" rows="3" placeholder="Descreva o problema encontrado"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="maintenanceDiagnosis">Diagnóstico Técnico</label>
+                        <textarea id="maintenanceDiagnosis" class="form-control" rows="3" placeholder="Descreva o diagnóstico técnico"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="maintenanceStatus">Status</label>
+                        <select id="maintenanceStatus" class="form-control">
+                            <option value="pending">Pendente</option>
+                            <option value="in_progress">Em Andamento</option>
+                            <option value="completed">Concluído</option>
+                            <option value="canceled">Cancelado</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="maintenanceTechnician">Técnico Responsável</label>
+                        <input type="text" id="maintenanceTechnician" class="form-control" placeholder="Nome do técnico">
+                    </div>
+                    <div class="form-group">
+                        <label for="maintenanceCost">Custo Estimado (R$)</label>
+                        <input type="number" id="maintenanceCost" class="form-control" placeholder="0.00" step="0.01">
+                    </div>
+                    <div class="form-group">
+                        <label for="maintenanceExpectedDate">Previsão de Conclusão</label>
+                        <input type="date" id="maintenanceExpectedDate" class="form-control">
+                    </div>
+                </div>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-secondary" onclick="closeModal('maintenanceModal')">Cancelar</button>
-                <button class="btn btn-primary" onclick="saveMaintenance()">Salvar</button>
+                <button class="btn btn-secondary" onclick="closeModal('newMaintenanceModal')">Cancelar</button>
+                <button class="btn btn-primary" onclick="submitMaintenance()">Salvar Manutenção</button>
             </div>
         </div>
     </div>
 
-    <!-- Modal para Detalhes da Manutenção -->
-    <div id="maintenanceDetailModal" class="modal">
+    <!-- Modal para Termo de Responsabilidade -->
+    <div id="responsibilityTermModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title">Detalhes da Manutenção</h3>
-                <button class="modal-close" onclick="closeModal('maintenanceDetailModal')">&times;</button>
+                <h3 class="modal-title">
+                    <i class="fas fa-file-signature"></i> Termo de Responsabilidade
+                </h3>
+                <button class="modal-close" onclick="closeModal('responsibilityTermModal')">&times;</button>
             </div>
-            <div class="modal-body" id="maintenanceDetailContent">
-                <!-- Preenchido dinamicamente -->
+            <div class="modal-body">
+                <div class="termo-container" id="termoContent">
+                    <h3 class="termo-title">TERMO DE RESPONSABILIDADE</h3>
+                    <div class="termo-content">
+                        <p>Eu, <strong id="termoUserName">_________________________________________</strong>, portador(a) do CPF <strong id="termoUserCpf">________________________</strong>, declaro para os devidos fins que recebi da instituição <strong id="termoInstitution">Escola Estadual de Ensino Médio</strong> os equipamentos relacionados abaixo, comprometendo-me a utilizá-los exclusivamente para fins educacionais e a zelar por sua integridade física e funcional.</p>
+                        
+                        <p>Declaro ainda estar ciente de que sou responsável pela guarda e conservação dos equipamentos, bem como por eventuais danos que venham a ocorrer por uso indevido ou negligência, ficando sujeito às penalidades previstas no regulamento interno da instituição.</p>
+                        
+                        <table class="termo-table">
+                            <thead>
+                                <tr>
+                                    <th>Equipamento</th>
+                                    <th>Número de Série</th>
+                                    <th>Acessórios</th>
+                                    <th>Estado</th>
+                                </tr>
+                            </thead>
+                            <tbody id="termoEquipmentTable">
+                                <!-- Itens serão adicionados dinamicamente -->
+                            </tbody>
+                        </table>
+                        
+                        <p>Comprometo-me a devolver os equipamentos no prazo estipulado ou imediatamente quando solicitado pela instituição, sob pena de responder civil e criminalmente por sua retenção indevida.</p>
+                        
+                        <div class="termo-signature">
+                            <p>_________________________________________</p>
+                            <p>Assinatura do Responsável</p>
+                        </div>
+                        
+                        <div class="termo-info">
+                            <div>
+                                <p>Data: <strong id="termoDate">__/__/____</strong></p>
+                            </div>
+                            <div>
+                                <p>Cidade: <strong id="termoCity">________________________</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-secondary" onclick="closeModal('maintenanceDetailModal')">Fechar</button>
-                <button id="completeMaintenanceBtn" class="btn btn-success" style="display: none;" onclick="completeMaintenance()">Concluir Manutenção</button>
+                <button class="btn btn-secondary" onclick="closeModal('responsibilityTermModal')">Fechar</button>
+                <button class="btn btn-primary" onclick="printTermo()">
+                    <i class="fas fa-print"></i> Imprimir Termo
+                </button>
             </div>
         </div>
     </div>
@@ -1797,651 +1344,1524 @@
     <script>
         // Configuração do Firebase
         const firebaseConfig = {
-            apiKey: "AIzaSyBOoXyjLQPfgzQM06LVy-TRSPdSM_8CjcE",
-            authDomain: "gerenciamentoaparelho.firebaseapp.com",
-            projectId: "gerenciamentoaparelho",
-            storageBucket: "gerenciamentoaparelho.appspot.com",
-            messagingSenderId: "751628186418",
-            appId: "1:751628186418:web:dd68af74d9e3723c179d2b",
-            measurementId: "G-K02ZZQ4JBK"
+            apiKey: "SUA_API_KEY",
+            authDomain: "SEU_PROJETO.firebaseapp.com",
+            databaseURL: "https://SEU_PROJETO.firebaseio.com",
+            projectId: "SEU_PROJETO",
+            storageBucket: "SEU_PROJETO.appspot.com",
+            messagingSenderId: "SEU_SENDER_ID",
+            appId: "SEU_APP_ID"
         };
 
-        // Inicializa o Firebase
-        const app = firebase.initializeApp(firebaseConfig);
+        // Inicializar Firebase
+        firebase.initializeApp(firebaseConfig);
         const database = firebase.database();
         const auth = firebase.auth();
 
         // Variáveis globais
         let currentUser = null;
         let equipmentChart = null;
-        let equipmentCounter = 1;
-        let registros = [];
-        let uploadedFiles = [];
+        let reportChart = null;
 
-        // Dados de exemplo
-        const professores = {
-            "ADEMAR RIBEIRO DE SOUZA": "ademarribeirosouza@prof.educacao.sp.gov.br",
-            "ALEX LUTH PEREIRA MARANHAO": "luth@prof.educacao.sp.gov.br",
-            "ALEXANDRE SILVA LIMA": "alexandresilvalima@prof.educacao.sp.gov.br",
-            "WILSON RODRIGUES MOTA": "wmota@prof.educacao.sp.gov.br"
-        };
-
-        const salasPorTurmaPeriodo = {
-            "6° ANO A MANHA": "Sala 1",
-            "6° ANO B MANHA": "Sala 2",
-            "6° ANO C MANHA": "Sala 3",
-            "4050 - ADMINISTRAÇÃO - 2ª SERIE A MANHA": "Laboratório 1"
-        };
-
-        const equipamentos = {
-            "NOTEBOOK": [
-                { id: "NB001", serial: "SN123456789", status: "Disponível" },
-                { id: "NB002", serial: "SN987654321", status: "Disponível" },
-                { id: "NB003", serial: "SN456789123", status: "Manutenção" }
-            ],
-            "TABLET": [
-                { id: "TAB001", serial: "SNTAB001", status: "Disponível" },
-                { id: "TAB002", serial: "SNTAB002", status: "Em uso" },
-                { id: "TAB003", serial: "SNTAB003", status: "Disponível" }
-            ],
-            "SMARTPHONE": [
-                { id: "SP001", serial: "SNSP001", status: "Disponível" },
-                { id: "SP002", serial: "SNSP002", status: "Com avarias" }
-            ],
-            "HEAD SET": [
-                { id: "HS001", serial: "SNHS001", status: "Disponível" },
-                { id: "HS002", serial: "SNHS002", status: "Disponível" }
-            ],
-            "CHROMEBOOK": [
-                { id: "CB001", serial: "SNCB001", status: "Disponível" },
-                { id: "CB002", serial: "SNCB002", status: "Em uso" }
-            ],
-            "CAIXA DE SOM": [
-                { id: "CS001", serial: "SNCS001", status: "Disponível" },
-                { id: "CS002", serial: "SNCS002", status: "Disponível" }
-            ]
-        };
-
-        // Inicialização do sistema
+        // Inicializar o sistema quando o DOM estiver carregado
         document.addEventListener('DOMContentLoaded', function() {
-            // Configura data atual nos formulários
-            const today = new Date().toISOString().split('T')[0];
-            document.getElementById('withdrawalDate').value = today;
-            document.getElementById('returnDate').value = today;
-            document.getElementById('registrationDate').value = today;
-            document.getElementById('reservationDate').value = today;
-            document.getElementById('maintenanceDate').value = today;
-            
-            // Configura horário atual
-            const now = new Date();
-            const hours = now.getHours().toString().padStart(2, '0');
-            const minutes = now.getMinutes().toString().padStart(2, '0');
-            const time = `${hours}:${minutes}`;
-            document.getElementById('withdrawalTime').value = time;
-            document.getElementById('returnTime').value = time;
-            
-            // Preencher a tabela de registros
-            loadRegistrationTable();
-            
-            // Preenche dropdown de professores
-            const teacherSelect = document.getElementById('reservationTeacher');
-            database.ref('professores').once('value', (snapshot) => {
-                snapshot.forEach((childSnapshot) => {
-                    const professor = childSnapshot.val();
-                    const option = document.createElement('option');
-                    option.value = professor.id;
-                    option.textContent = professor.nome;
-                    teacherSelect.appendChild(option);
-                });
-            });
-            
-            // Configura evento para mostrar intervalo de datas personalizado
-            document.getElementById('reportDate').addEventListener('change', function() {
-                document.getElementById('customDateRange').style.display = 
-                    this.value === 'custom' ? 'block' : 'none';
+            // Verificar se o usuário já está logado
+            auth.onAuthStateChanged(user => {
+                if (user) {
+                    // Usuário logado
+                    currentUser = user;
+                    showMainSystem();
+                    loadInitialData();
+                } else {
+                    // Nenhum usuário logado
+                    showLoginScreen();
+                }
             });
         });
 
-        // Funções de autenticação
+        // Função para fazer login
         function login() {
             const email = document.getElementById('loginEmail').value;
             const password = document.getElementById('loginPassword').value;
             
             auth.signInWithEmailAndPassword(email, password)
-                .then((userCredential) => {
-                    // Login bem-sucedido
-                    currentUser = {
-                        id: userCredential.user.uid,
-                        email: userCredential.user.email,
-                        nome: userCredential.user.displayName || email.split('@')[0]
-                    };
-                    
-                    document.getElementById('loginScreen').style.display = 'none';
-                    document.getElementById('mainSystem').style.display = 'block';
-                    document.getElementById('currentUser').textContent = currentUser.nome;
-                    
-                    // Inicializa dashboard
-                    updateDashboard();
-                    loadEquipmentTable();
-                    loadReservationsTable();
-                    loadMaintenanceTable();
+                .then(userCredential => {
+                    currentUser = userCredential.user;
+                    showMainSystem();
+                    loadInitialData();
                 })
-                .catch((error) => {
+                .catch(error => {
                     alert('Erro ao fazer login: ' + error.message);
                 });
         }
 
+        // Função para fazer logout
         function logout() {
-            auth.signOut().then(() => {
-                currentUser = null;
-                document.getElementById('mainSystem').style.display = 'none';
-                document.getElementById('loginScreen').style.display = 'block';
-                document.getElementById('loginEmail').value = 'professor@escola.gov.br';
-                document.getElementById('loginPassword').value = 'senha123';
-            });
+            auth.signOut()
+                .then(() => {
+                    currentUser = null;
+                    showLoginScreen();
+                })
+                .catch(error => {
+                    alert('Erro ao fazer logout: ' + error.message);
+                });
         }
 
-        // Verifica estado de autenticação ao carregar a página
-        auth.onAuthStateChanged((user) => {
-            if (user) {
-                currentUser = {
-                    id: user.uid,
-                    email: user.email,
-                    nome: user.displayName || user.email.split('@')[0]
-                };
-                
-                document.getElementById('loginScreen').style.display = 'none';
-                document.getElementById('mainSystem').style.display = 'block';
-                document.getElementById('currentUser').textContent = currentUser.nome;
-                
-                // Inicializa dashboard
-                updateDashboard();
-                loadEquipmentTable();
-                loadReservationsTable();
-                loadMaintenanceTable();
-            } else {
-                // Restaura os valores padrão ao deslogar
-                document.getElementById('loginEmail').value = 'professor@escola.gov.br';
-                document.getElementById('loginPassword').value = 'senha123';
-            }
-        });
+        // Mostrar tela de login
+        function showLoginScreen() {
+            document.getElementById('loginScreen').style.display = 'block';
+            document.getElementById('mainSystem').style.display = 'none';
+        }
 
-        // Funções para navegação entre abas
+        // Mostrar sistema principal
+        function showMainSystem() {
+            document.getElementById('loginScreen').style.display = 'none';
+            document.getElementById('mainSystem').style.display = 'block';
+            document.getElementById('currentUser').textContent = currentUser.email;
+        }
+
+        // Abrir uma aba específica
         function openTab(tabId) {
-            // Esconde todos os conteúdos das abas
+            // Esconder todas as abas
             document.querySelectorAll('.tab-content').forEach(tab => {
                 tab.classList.remove('active');
             });
             
-            // Remove a classe active de todas as abas de navegação
+            // Remover classe active de todas as guias
             document.querySelectorAll('.nav-tab').forEach(tab => {
                 tab.classList.remove('active');
             });
             
-            // Mostra a aba selecionada e marca como ativa
+            // Mostrar a aba selecionada
             document.getElementById(tabId).classList.add('active');
-            event.currentTarget.classList.add('active');
             
-            // Atualiza o conteúdo da aba se necessário
-            if (tabId === 'dashboard') {
-                updateDashboard();
-            } else if (tabId === 'register') {
-                loadEquipmentTable();
-            } else if (tabId === 'reservations') {
-                loadReservationsTable();
-            } else if (tabId === 'reports') {
-                generateReport();
-            } else if (tabId === 'maintenance') {
-                loadMaintenanceTable();
-            } else if (tabId === 'registration') {
-                loadRegistrationTable();
+            // Adicionar classe active à guia selecionada
+            document.querySelectorAll('.nav-tab').forEach(tab => {
+                if (tab.getAttribute('onclick').includes(tabId)) {
+                    tab.classList.add('active');
+                }
+            });
+            
+            // Atualizar os dados da aba se necessário
+            switch(tabId) {
+                case 'dashboard':
+                    updateDashboard();
+                    break;
+                case 'reservations':
+                    loadReservations();
+                    break;
+                case 'reports':
+                    updateReport();
+                    break;
+                case 'maintenance':
+                    loadMaintenanceRecords();
+                    break;
+                case 'registration':
+                    loadActivities();
+                    break;
             }
         }
 
-        // ==============================
-        // FUNÇÕES DA ABA DE REGISTRO
-        // ==============================
-        function fillTeacherEmail() {
-            const teacherSelect = document.getElementById('teacherName');
-            const emailInput = document.getElementById('teacherEmail');
-            const selectedTeacher = teacherSelect.value;
-
-            if (professores[selectedTeacher]) {
-                emailInput.value = professores[selectedTeacher];
-            } else {
-                emailInput.value = "";
-            }
+        // Carregar dados iniciais
+        function loadInitialData() {
+            updateDashboard();
+            loadEquipmentForSelects();
+            loadReservations();
+            updateReport();
+            loadMaintenanceRecords();
+            loadActivities();
         }
 
-        function updateIdentificationNumbers(id) {
-            const equipmentTypeSelect = document.getElementById(`equipmentType${id}`);
-            const identificationNumberSelect = document.getElementById(`identificationNumber${id}`);
-            const selectedEquipment = equipmentTypeSelect.value;
-
-            // Limpar opções anteriores
-            identificationNumberSelect.innerHTML = '<option value="">Selecione o aparelho primeiro</option>';
-
-            if (selectedEquipment && equipamentos[selectedEquipment]) {
-                equipamentos[selectedEquipment].forEach(eq => {
-                    const option = document.createElement('option');
-                    option.value = eq.id;
-                    option.textContent = eq.id;
-                    option.dataset.serial = eq.serial;
-                    option.dataset.status = eq.status;
-                    identificationNumberSelect.appendChild(option);
+        // Atualizar o dashboard
+        function updateDashboard() {
+            const equipmentFilter = document.getElementById('dashboardEquipmentFilter').value;
+            const locationFilter = document.getElementById('dashboardLocationFilter').value;
+            
+            // Fazer consulta ao Firebase com os filtros aplicados
+            let equipmentRef = database.ref('equipments');
+            
+            if (equipmentFilter !== 'all' || locationFilter !== 'all') {
+                equipmentRef = equipmentRef.orderByChild('filterKey');
+            }
+            
+            equipmentRef.once('value', snapshot => {
+                const equipments = snapshot.val() || {};
+                let inUseCount = 0;
+                let availableCount = 0;
+                let maintenanceCount = 0;
+                let damagedCount = 0;
+                
+                const filteredEquipments = Object.values(equipments).filter(equipment => {
+                    // Aplicar filtros
+                    if (equipmentFilter !== 'all' && equipment.type !== equipmentFilter) return false;
+                    if (locationFilter !== 'all' && equipment.location !== locationFilter) return false;
+                    return true;
                 });
+                
+                // Contar status
+                filteredEquipments.forEach(equipment => {
+                    switch(equipment.status) {
+                        case 'Em uso':
+                            inUseCount++;
+                            break;
+                        case 'Disponível':
+                            availableCount++;
+                            break;
+                        case 'Manutenção':
+                            maintenanceCount++;
+                            break;
+                        case 'Danificado':
+                            damagedCount++;
+                            break;
+                    }
+                });
+                
+                // Atualizar contadores
+                document.getElementById('inUseCount').textContent = inUseCount;
+                document.getElementById('availableCount').textContent = availableCount;
+                document.getElementById('maintenanceCount').textContent = maintenanceCount;
+                document.getElementById('damagedCount').textContent = damagedCount;
+                
+                // Atualizar tabela
+                const tableBody = document.getElementById('equipmentTableBody');
+                tableBody.innerHTML = '';
+                
+                filteredEquipments.forEach(equipment => {
+                    const row = document.createElement('tr');
+                    
+                    row.innerHTML = `
+                        <td>${equipment.type || 'N/A'}</td>
+                        <td>${equipment.serialNumber || 'N/A'}</td>
+                        <td>${equipment.location || 'N/A'}</td>
+                        <td>
+                            <span class="status-indicator ${getStatusClass(equipment.status)}"></span>
+                            ${equipment.status || 'N/A'}
+                        </td>
+                        <td>${formatDate(equipment.lastUpdated) || 'N/A'}</td>
+                    `;
+                    
+                    tableBody.appendChild(row);
+                });
+                
+                // Atualizar gráfico
+                updateEquipmentChart(filteredEquipments);
+            });
+        }
+
+        // Atualizar gráfico de equipamentos
+        function updateEquipmentChart(equipments) {
+            const ctx = document.getElementById('equipmentChart').getContext('2d');
+            
+            // Agrupar por tipo de equipamento
+            const equipmentTypes = {};
+            equipments.forEach(equipment => {
+                if (!equipmentTypes[equipment.type]) {
+                    equipmentTypes[equipment.type] = {
+                        total: 0,
+                        available: 0,
+                        inUse: 0,
+                        maintenance: 0,
+                        damaged: 0
+                    };
+                }
+                
+                equipmentTypes[equipment.type].total++;
+                
+                switch(equipment.status) {
+                    case 'Disponível':
+                        equipmentTypes[equipment.type].available++;
+                        break;
+                    case 'Em uso':
+                        equipmentTypes[equipment.type].inUse++;
+                        break;
+                    case 'Manutenção':
+                        equipmentTypes[equipment.type].maintenance++;
+                        break;
+                    case 'Danificado':
+                        equipmentTypes[equipment.type].damaged++;
+                        break;
+                }
+            });
+            
+            const labels = Object.keys(equipmentTypes);
+            const availableData = labels.map(type => equipmentTypes[type].available);
+            const inUseData = labels.map(type => equipmentTypes[type].inUse);
+            const maintenanceData = labels.map(type => equipmentTypes[type].maintenance);
+            const damagedData = labels.map(type => equipmentTypes[type].damaged);
+            
+            if (equipmentChart) {
+                equipmentChart.destroy();
             }
-        }
-
-        function fillSerialNumber(id) {
-            const identificationNumberSelect = document.getElementById(`identificationNumber${id}`);
-            const serialNumberInput = document.getElementById(`serialNumber${id}`);
-            const selectedOption = identificationNumberSelect.options[identificationNumberSelect.selectedIndex];
-
-            if (selectedOption && selectedOption.dataset.serial) {
-                serialNumberInput.value = selectedOption.dataset.serial;
-            } else {
-                serialNumberInput.value = "";
-            }
-        }
-
-        function updateRoom() {
-            const classSelect = document.getElementById('studentClass');
-            const roomInput = document.getElementById('room');
-            const selectedClass = classSelect.value;
-
-            if (salasPorTurmaPeriodo[selectedClass]) {
-                roomInput.value = salasPorTurmaPeriodo[selectedClass];
-            } else {
-                roomInput.value = '';
-            }
-        }
-
-        function addEquipment() {
-            equipmentCounter++;
-            const container = document.getElementById('equipmentContainer');
-
-            const newRow = document.createElement('div');
-            newRow.className = 'equipment-row';
-            newRow.innerHTML = `
-                <div class="form-group">
-                    <label for="equipmentType${equipmentCounter}">APARELHO:</label>
-                    <select id="equipmentType${equipmentCounter}" class="form-control" onchange="updateIdentificationNumbers('${equipmentCounter}')">
-                        <option value="">Selecione o aparelho</option>
-                        <option value="NOTEBOOK">NOTEBOOK</option>
-                        <option value="TABLET">TABLET</option>
-                        <option value="SMARTPHONE">SMARTPHONE</option>
-                        <option value="HEAD SET">HEAD SET</option>
-                        <option value="CHROMEBOOK">CHROMEBOOK</option>
-                        <option value="CAIXA DE SOM">CAIXA DE SOM</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="identificationNumber${equipmentCounter}">N° DE IDENTIFICAÇÃO:</label>
-                    <select id="identificationNumber${equipmentCounter}" class="form-control" onchange="fillSerialNumber('${equipmentCounter}')">
-                        <option value="">Selecione o aparelho primeiro</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="serialNumber${equipmentCounter}">N° DE SÉRIE:</label>
-                    <input type="text" id="serialNumber${equipmentCounter}" class="form-control" readonly>
-                    <div class="auto-fill-label">Preenchido automaticamente</div>
-                </div>
-                <div class="form-group">
-                    <label for="quantity${equipmentCounter}">QUANTIDADE:</label>
-                    <input type="number" id="quantity${equipmentCounter}" class="form-control" min="1" value="1">
-                </div>
-                <button class="remove-equipment-btn" onclick="removeEquipment(this)">
-                    <i class="fas fa-times"></i>
-                </button>
-            `;
-            container.appendChild(newRow);
-        }
-
-        function removeEquipment(button) {
-            const row = button.closest('.equipment-row');
-            if (row && document.querySelectorAll('.equipment-row').length > 1) {
-                row.remove();
-            }
-        }
-
-        function handleFileUpload() {
-            const fileInput = document.getElementById('fileUpload');
-            const fileList = document.getElementById('fileList');
-
-            if (fileInput.files.length > 0) {
-                const file = fileInput.files[0];
-                uploadedFiles.push(file);
-
-                const fileItem = document.createElement('div');
-                fileItem.className = 'file-item';
-                fileItem.innerHTML = `
-                    <i class="fas fa-file"></i>
-                    <span>${file.name}</span>
-                    <span class="remove-file" onclick="removeFile('${file.name}')">
-                        <i class="fas fa-times"></i>
-                    </span>
-                `;
-                fileList.appendChild(fileItem);
-
-                // Resetar o input para permitir novos uploads
-                fileInput.value = "";
-            }
-        }
-
-        function removeFile(fileName) {
-            uploadedFiles = uploadedFiles.filter(file => file.name !== fileName);
-            document.querySelectorAll('.file-item').forEach(item => {
-                if (item.textContent.includes(fileName)) {
-                    item.remove();
+            
+            equipmentChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: 'Disponíveis',
+                            data: availableData,
+                            backgroundColor: 'rgba(39, 174, 96, 0.7)',
+                            borderColor: 'rgba(39, 174, 96, 1)',
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'Em Uso',
+                            data: inUseData,
+                            backgroundColor: 'rgba(52, 152, 219, 0.7)',
+                            borderColor: 'rgba(52, 152, 219, 1)',
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'Manutenção',
+                            data: maintenanceData,
+                            backgroundColor: 'rgba(243, 156, 18, 0.7)',
+                            borderColor: 'rgba(243, 156, 18, 1)',
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'Danificados',
+                            data: damagedData,
+                            backgroundColor: 'rgba(231, 76, 60, 0.7)',
+                            borderColor: 'rgba(231, 76, 60, 1)',
+                            borderWidth: 1
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Quantidade de Equipamentos'
+                            }
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Tipo de Equipamento'
+                            }
+                        }
+                    },
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Distribuição de Equipamentos por Status',
+                            font: {
+                                size: 16
+                            }
+                        },
+                        legend: {
+                            position: 'top'
+                        }
+                    }
                 }
             });
         }
 
-        function clearForm() {
-            document.getElementById('teacherName').value = "";
-            document.getElementById('teacherEmail').value = "";
-            document.getElementById('studentClass').value = "";
-            document.getElementById('room').value = "";
-            document.getElementById('withdrawalDate').value = "";
-            document.getElementById('returnDate').value = "";
-            document.getElementById('withdrawalTime').value = "";
-            document.getElementById('returnTime').value = "";
-            document.getElementById('registrationCode').value = "";
-            document.getElementById('observation').value = "";
-            document.getElementById('withdrawalPeriod').value = "";
-            document.getElementById('returnPeriod').value = "";
-            document.getElementById('observationPeriod').value = '';
-
-            // Limpar lista de arquivos
-            uploadedFiles = [];
-            document.getElementById('fileList').innerHTML = '';
-
-            // Manter apenas um campo de equipamento e limpá-lo
-            const container = document.getElementById('equipmentContainer');
-            container.innerHTML = '';
-            equipmentCounter = 1;
-            addEquipment();
-
-            // Esconder o termo
-            document.getElementById('termoContainer').style.display = 'none';
-        }
-
+        // Registrar novo equipamento
         function registerEquipment() {
-            const teacherName = document.getElementById('teacherName').value;
-            const teacherEmail = document.getElementById('teacherEmail').value;
-            const studentClass = document.getElementById('studentClass').value;
-            const room = document.getElementById('room').value;
-            const withdrawalDate = document.getElementById('withdrawalDate').value;
-            const returnDate = document.getElementById('returnDate').value;
-            const withdrawalTime = document.getElementById('withdrawalTime').value;
-            const returnTime = document.getElementById('returnTime').value;
-            const withdrawalPeriod = document.getElementById('withdrawalPeriod').value;
-            const returnPeriod = document.getElementById('returnPeriod').value;
-            const registrationCode = document.getElementById('registrationCode').value;
-            const observationPeriod = document.getElementById('observationPeriod').value;
-            const observation = document.getElementById('observation').value;
-
+            const equipmentData = {
+                type: document.getElementById('equipmentType').value,
+                brand: document.getElementById('equipmentBrand').value,
+                model: document.getElementById('equipmentModel').value,
+                serialNumber: document.getElementById('serialNumber').value,
+                purchaseDate: document.getElementById('purchaseDate').value,
+                warrantyExpiration: document.getElementById('warrantyExpiration').value,
+                location: document.getElementById('currentLocation').value,
+                status: document.getElementById('equipmentStatus').value,
+                additionalInfo: document.getElementById('additionalInfo').value,
+                registeredBy: currentUser.email,
+                registrationDate: new Date().toISOString(),
+                lastUpdated: new Date().toISOString()
+            };
+            
             // Validar campos obrigatórios
-            if (!teacherName || !studentClass || !registrationCode || !withdrawalPeriod || !returnPeriod || !observationPeriod) {
+            if (!equipmentData.type || !equipmentData.serialNumber || !equipmentData.location || !equipmentData.status) {
                 alert('Por favor, preencha todos os campos obrigatórios.');
                 return;
             }
-
-            // Coletar equipamentos
-            const equipmentRows = document.querySelectorAll('.equipment-row');
-            const equipmentList = [];
-
-            equipmentRows.forEach(row => {
-                const id = row.id ? row.id.split('.')[1] : '1';
-                const equipmentType = document.getElementById(`equipmentType${id}`)?.value;
-                const identificationNumber = document.getElementById(`identificationNumber${id}`)?.value;
-                const serialNumber = document.getElementById(`serialNumber${id}`)?.value;
-                const quantity = document.getElementById(`quantity${id}`)?.value || 1;
-
-                if (equipmentType && identificationNumber) {
-                    equipmentList.push({ 
-                        type: equipmentType,
-                        id: identificationNumber,
-                        serial: serialNumber,
-                        quantity: parseInt(quantity),
-                        status: "Retirado"
-                    });
-                }
-            });
-
-            if (equipmentList.length === 0) {
-                alert('Por favor, adicione pelo menos um equipamento.');
-                return;
-            }
-
-            // Criar registro
-            const registro = {
-                id: Date.now(),
-                teacherName,
-                teacherEmail,
-                studentClass,
-                room,
-                withdrawalDate,
-                returnDate,
-                withdrawalTime,
-                returnTime,
-                withdrawalPeriod,
-                returnPeriod,
-                registrationCode,
-                observationPeriod,
-                observation,
-                files: uploadedFiles.map(f => f.name),
-                equipment: equipmentList,
-                timestamp: new Date().toISOString(),
-                status: "Ativo"
-            };
-
-            // Adicionar ao array de registros
-            registros.push(registro);
-
-            // Atualizar a tabela de registros
-            loadRegistrationTable();
-
-            alert('Registro realizado com sucesso!');
-
-            // Limpar o formulário
-            clearForm();
+            
+            // Gerar um ID único para o equipamento
+            const equipmentId = database.ref().child('equipments').push().key;
+            
+            // Salvar no Firebase
+            database.ref('equipments/' + equipmentId).set(equipmentData)
+                .then(() => {
+                    alert('Equipamento cadastrado com sucesso!');
+                    
+                    // Gerar código de registro
+                    const registrationCode = generateRegistrationCode(equipmentId, equipmentData.serialNumber);
+                    addRegistrationCode(registrationCode);
+                    
+                    // Limpar formulário
+                    clearRegisterForm();
+                    
+                    // Atualizar dashboard
+                    updateDashboard();
+                })
+                .catch(error => {
+                    alert('Erro ao cadastrar equipamento: ' + error.message);
+                });
         }
 
-        function loadRegistrationTable() {
-            const tableBody = document.getElementById('registrationTable');
-            tableBody.innerHTML = "";
+        // Limpar formulário de cadastro
+        function clearRegisterForm() {
+            document.getElementById('equipmentType').value = '';
+            document.getElementById('equipmentBrand').value = '';
+            document.getElementById('equipmentModel').value = '';
+            document.getElementById('serialNumber').value = '';
+            document.getElementById('purchaseDate').value = '';
+            document.getElementById('warrantyExpiration').value = '';
+            document.getElementById('currentLocation').value = '';
+            document.getElementById('equipmentStatus').value = 'Disponível';
+            document.getElementById('additionalInfo').value = '';
+        }
+
+        // Gerar código de registro
+        function generateRegistrationCode(equipmentId, serialNumber) {
+            const timestamp = new Date().getTime().toString(36);
+            const randomPart = Math.random().toString(36).substr(2, 5);
+            return `EQ-${serialNumber.substr(0, 3)}-${timestamp}-${randomPart}`.toUpperCase();
+        }
+
+        // Adicionar código de registro à lista
+        function addRegistrationCode(code) {
+            const codesList = document.getElementById('codesList');
+            const codeItem = document.createElement('div');
+            codeItem.className = 'code-item';
+            codeItem.textContent = code;
+            codesList.appendChild(codeItem);
+        }
+
+        // Carregar equipamentos para selects
+        function loadEquipmentForSelects() {
+            database.ref('equipments').once('value', snapshot => {
+                const equipments = snapshot.val() || {};
+                const equipmentSelects = [
+                    document.getElementById('reservationEquipment'),
+                    document.getElementById('maintenanceEquipment'),
+                    document.getElementById('maintenanceEquipmentFilter')
+                ];
+                
+                // Limpar selects
+                equipmentSelects.forEach(select => {
+                    // Manter a primeira opção (se houver)
+                    while (select.options.length > 1) {
+                        select.remove(1);
+                    }
+                });
+                
+                // Adicionar equipamentos
+                Object.values(equipments).forEach(equipment => {
+                    equipmentSelects.forEach(select => {
+                        if (select) {
+                            const option = document.createElement('option');
+                            option.value = equipment.serialNumber;
+                            option.textContent = `${equipment.type} (${equipment.serialNumber})`;
+                            select.appendChild(option);
+                        }
+                    });
+                });
+            });
+        }
+
+        // Carregar reservas
+        function loadReservations() {
+            const statusFilter = document.getElementById('reservationStatusFilter').value;
+            const dateFilter = document.getElementById('reservationDateFilter').value;
+            const userFilter = document.getElementById('reservationUserFilter').value.toLowerCase();
             
-            registros.forEach(reg => {
-                // Para cada equipamento no registro, criar uma linha na tabela
-                reg.equipment.forEach((eq, index) => {
+            database.ref('reservations').once('value', snapshot => {
+                const reservations = snapshot.val() || {};
+                const tableBody = document.getElementById('reservationsTableBody');
+                tableBody.innerHTML = '';
+                
+                Object.values(reservations).forEach(reservation => {
+                    // Aplicar filtros
+                    if (statusFilter !== 'all' && reservation.status !== statusFilter) return;
+                    if (dateFilter && reservation.date !== dateFilter) return;
+                    if (userFilter && !reservation.user.toLowerCase().includes(userFilter)) return;
+                    
                     const row = document.createElement('tr');
                     
-                    // Mostrar informações do professor apenas na primeira linha do registro
-                    const teacherInfo = index === 0 ? `
-                        <td rowspan="${reg.equipment.length}">${reg.teacherName}</td>
-                    ` : '';
-                    
                     row.innerHTML = `
-                        ${teacherInfo}
-                        <td>${eq.type}</td>
-                        <td>${eq.id}</td>
-                        <td>${eq.serial}</td>
-                        <td>${eq.quantity}</td>
-                        <td>${formatDate(reg.withdrawalDate)} ${reg.withdrawalTime}</td>
-                        <td>${formatDate(reg.returnDate)} ${reg.returnTime}</td>
+                        <td>${reservation.id || 'N/A'}</td>
+                        <td>${reservation.equipment || 'N/A'}</td>
+                        <td>${reservation.user || 'N/A'}</td>
+                        <td>${formatDate(reservation.date) || 'N/A'}</td>
+                        <td>${reservation.startTime} - ${reservation.endTime}</td>
+                        <td><span class="badge ${getStatusBadgeClass(reservation.status)}">${reservation.status || 'N/A'}</span></td>
                         <td>
-                            <span class="badge ${getStatusBadgeClass(eq.status)}">
-                                <span class="status-indicator ${getStatusIndicatorClass(eq.status)}"></span>
-                                ${eq.status}
-                            </span>
+                            <button class="btn btn-primary btn-sm" onclick="viewReservationDetails('${reservation.id}')">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            ${reservation.status === 'pending' ? `
+                            <button class="btn btn-success btn-sm" onclick="approveReservation('${reservation.id}')">
+                                <i class="fas fa-check"></i>
+                            </button>
+                            <button class="btn btn-danger btn-sm" onclick="rejectReservation('${reservation.id}')">
+                                <i class="fas fa-times"></i>
+                            </button>
+                            ` : ''}
                         </td>
                     `;
+                    
                     tableBody.appendChild(row);
                 });
             });
         }
 
-        function getStatusIndicatorClass(status) {
-            switch (status) {
-                case "Retirado": return "status-inuse";
-                case "Devolvido": return "status-returned";
-                case "Com avarias": return "status-damaged";
-                case "Em manutenção": return "status-damaged";
-                default: return "status-available";
-            }
+        // Abrir modal de nova reserva
+        function openNewReservationModal() {
+            // Preencher select de equipamentos (já feito em loadEquipmentForSelects)
+            document.getElementById('reservationModal').style.display = 'flex';
         }
 
-        function generateTermo() {
-            const teacherName = document.getElementById('teacherName').value;
-            const studentClass = document.getElementById('studentClass').value;
-            const withdrawalDate = document.getElementById('withdrawalDate').value;
-            const returnDate = document.getElementById('returnDate').value;
-            const withdrawalTime = document.getElementById('withdrawalTime').value;
-            const returnTime = document.getElementById('returnTime').value;
-            const withdrawalPeriod = document.getElementById('withdrawalPeriod').value;
-            const returnPeriod = document.getElementById('returnPeriod').value;
-            const registrationCode = document.getElementById('registrationCode').value;
-            const observationPeriod = document.getElementById('observationPeriod').value;
+        // Fechar modal
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
 
-            if (!teacherName || !studentClass || !registrationCode) {
-                alert('Preencha os campos obrigatórios antes de gerar o termo.');
+        // Submeter nova reserva
+        function submitReservation() {
+            const reservationData = {
+                equipment: document.getElementById('reservationEquipment').value,
+                user: document.getElementById('reservationUser').value,
+                date: document.getElementById('reservationDate').value,
+                startTime: document.getElementById('reservationStartTime').value,
+                endTime: document.getElementById('reservationEndTime').value,
+                purpose: document.getElementById('reservationPurpose').value,
+                status: 'pending',
+                createdBy: currentUser.email,
+                createdAt: new Date().toISOString()
+            };
+            
+            // Validar campos obrigatórios
+            if (!reservationData.equipment || !reservationData.user || !reservationData.date || 
+                !reservationData.startTime || !reservationData.endTime) {
+                alert('Por favor, preencha todos os campos obrigatórios.');
                 return;
             }
+            
+            // Gerar ID único para a reserva
+            const reservationId = database.ref().child('reservations').push().key;
+            reservationData.id = reservationId;
+            
+            // Salvar no Firebase
+            database.ref('reservations/' + reservationId).set(reservationData)
+                .then(() => {
+                    alert('Reserva cadastrada com sucesso!');
+                    closeModal('newReservationModal');
+                    loadReservations();
+                })
+                .catch(error => {
+                    alert('Erro ao cadastrar reserva: ' + error.message);
+                });
+        }
 
-            // Coletar equipamentos
-            const equipmentRows = document.querySelectorAll('.equipment-row');
-            const equipmentList = [];
+        // Aprovar reserva
+        function approveReservation(reservationId) {
+            database.ref('reservations/' + reservationId).update({
+                status: 'approved',
+                approvedBy: currentUser.email,
+                approvedAt: new Date().toISOString()
+            })
+            .then(() => {
+                loadReservations();
+            })
+            .catch(error => {
+                alert('Erro ao aprovar reserva: ' + error.message);
+            });
+        }
 
-            equipmentRows.forEach(row => {
-                const id = row.id ? row.id.split('.')[1] : '1';
-                const equipmentType = document.getElementById(`equipmentType${id}`)?.value;
-                const identificationNumber = document.getElementById(`identificationNumber${id}`)?.value;
-                const serialNumber = document.getElementById(`serialNumber${id}`)?.value;
-                const quantity = document.getElementById(`quantity${id}`)?.value || 1;
+        // Rejeitar reserva
+        function rejectReservation(reservationId) {
+            database.ref('reservations/' + reservationId).update({
+                status: 'rejected',
+                rejectedBy: currentUser.email,
+                rejectedAt: new Date().toISOString()
+            })
+            .then(() => {
+                loadReservations();
+            })
+            .catch(error => {
+                alert('Erro ao rejeitar reserva: ' + error.message);
+            });
+        }
 
-                if (equipmentType && identificationNumber) {
-                    equipmentList.push({
-                        type: equipmentType,
-                        id: identificationNumber,
-                        serial: serialNumber,
-                        quantity: parseInt(quantity),
-                        status: "Retirado"
+        // Carregar registros de manutenção
+        function loadMaintenanceRecords() {
+            const statusFilter = document.getElementById('maintenanceStatusFilter').value;
+            const equipmentFilter = document.getElementById('maintenanceEquipmentFilter').value;
+            
+            database.ref('maintenance').once('value', snapshot => {
+                const maintenanceRecords = snapshot.val() || {};
+                const tableBody = document.getElementById('maintenanceTableBody');
+                tableBody.innerHTML = '';
+                
+                Object.values(maintenanceRecords).forEach(record => {
+                    // Aplicar filtros
+                    if (statusFilter !== 'all' && record.status !== statusFilter) return;
+                    if (equipmentFilter !== 'all' && record.equipmentId !== equipmentFilter) return;
+                    
+                    const row = document.createElement('tr');
+                    
+                    row.innerHTML = `
+                        <td>${record.id || 'N/A'}</td>
+                        <td>${record.equipmentType || 'N/A'}</td>
+                        <td>${record.equipmentSerial || 'N/A'}</td>
+                        <td>${record.problem || 'N/A'}</td>
+                        <td>${formatDate(record.registrationDate) || 'N/A'}</td>
+                        <td><span class="badge ${getMaintenanceStatusBadgeClass(record.status)}">${record.status || 'N/A'}</span></td>
+                        <td>
+                            <button class="btn btn-primary btn-sm" onclick="viewMaintenanceDetails('${record.id}')">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button class="btn btn-success btn-sm" onclick="completeMaintenance('${record.id}')">
+                                <i class="fas fa-check"></i>
+                            </button>
+                        </td>
+                    `;
+                    
+                    tableBody.appendChild(row);
+                });
+            });
+        }
+
+        // Abrir modal de nova manutenção
+        function openNewMaintenanceModal() {
+            document.getElementById('newMaintenanceModal').style.display = 'flex';
+        }
+
+        // Carregar detalhes do equipamento para manutenção
+        function loadEquipmentDetails() {
+            const equipmentSerial = document.getElementById('maintenanceEquipment').value;
+            
+            if (!equipmentSerial) {
+                document.getElementById('maintenanceSerialNumber').value = '';
+                return;
+            }
+            
+            database.ref('equipments').orderByChild('serialNumber').equalTo(equipmentSerial).once('value', snapshot => {
+                const equipments = snapshot.val();
+                
+                if (equipments) {
+                    const equipment = Object.values(equipments)[0];
+                    document.getElementById('maintenanceSerialNumber').value = equipment.serialNumber;
+                }
+            });
+        }
+
+        // Submeter nova manutenção
+        function submitMaintenance() {
+            const maintenanceData = {
+                equipmentId: document.getElementById('maintenanceEquipment').value,
+                equipmentSerial: document.getElementById('maintenanceSerialNumber').value,
+                equipmentType: document.getElementById('maintenanceEquipment').options[document.getElementById('maintenanceEquipment').selectedIndex].text.split(' (')[0],
+                problem: document.getElementById('maintenanceProblem').value,
+                diagnosis: document.getElementById('maintenanceDiagnosis').value,
+                status: document.getElementById('maintenanceStatus').value,
+                technician: document.getElementById('maintenanceTechnician').value,
+                cost: parseFloat(document.getElementById('maintenanceCost').value) || 0,
+                expectedCompletion: document.getElementById('maintenanceExpectedDate').value,
+                reportedBy: currentUser.email,
+                registrationDate: new Date().toISOString()
+            };
+            
+            // Validar campos obrigatórios
+            if (!maintenanceData.equipmentId || !maintenanceData.problem || !maintenanceData.status) {
+                alert('Por favor, preencha todos os campos obrigatórios.');
+                return;
+            }
+            
+            // Gerar ID único para a manutenção
+            const maintenanceId = database.ref().child('maintenance').push().key;
+            maintenanceData.id = maintenanceId;
+            
+            // Salvar no Firebase
+            database.ref('maintenance/' + maintenanceId).set(maintenanceData)
+                .then(() => {
+                    // Atualizar status do equipamento se necessário
+                    if (maintenanceData.status === 'in_progress' || maintenanceData.status === 'pending') {
+                        updateEquipmentStatus(maintenanceData.equipmentId, 'Manutenção');
+                    }
+                    
+                    alert('Manutenção registrada com sucesso!');
+                    closeModal('newMaintenanceModal');
+                    loadMaintenanceRecords();
+                    updateDashboard();
+                })
+                .catch(error => {
+                    alert('Erro ao registrar manutenção: ' + error.message);
+                });
+        }
+
+        // Completar manutenção
+        function completeMaintenance(maintenanceId) {
+            database.ref('maintenance/' + maintenanceId).once('value', snapshot => {
+                const maintenance = snapshot.val();
+                
+                if (maintenance) {
+                    // Atualizar status da manutenção
+                    database.ref('maintenance/' + maintenanceId).update({
+                        status: 'completed',
+                        completedAt: new Date().toISOString(),
+                        completedBy: currentUser.email
+                    })
+                    .then(() => {
+                        // Atualizar status do equipamento para "Disponível"
+                        updateEquipmentStatus(maintenance.equipmentId, 'Disponível');
+                        
+                        loadMaintenanceRecords();
+                        updateDashboard();
+                    })
+                    .catch(error => {
+                        alert('Erro ao completar manutenção: ' + error.message);
                     });
                 }
             });
-
-            if (equipmentList.length === 0) {
-                alert('Adicione pelo menos um equipamento antes de gerar o termo.');
-                return;
-            }
-
-            // Atualizar termo de responsabilidade
-            document.getElementById('termoTeacherName').textContent = teacherName;
-            document.getElementById('termoClass').textContent = studentClass;
-            document.getElementById('termoClass2').textContent = studentClass;
-            document.getElementById('termoWithdrawalDate').textContent = withdrawalDate;
-            document.getElementById('termoWithdrawalTime').textContent = withdrawalTime;
-            document.getElementById('termoReturnDate').textContent = returnDate;
-            document.getElementById('termoReturnTime').textContent = returnTime;
-            document.getElementById('termoWithdrawalPeriod').textContent = withdrawalPeriod;
-            document.getElementById('termoReturnPeriod').textContent = returnPeriod;
-            document.getElementById('termoRegistrant').textContent = registrationCode.split(' ')[0] || "Desconhecido";
-            document.getElementById('termoRegistrationCode').textContent = registrationCode;
-            document.getElementById('termoObservationPeriod').textContent = observationPeriod;
-
-            // Preencher tabela de equipamentos
-            const tableBody = document.getElementById('termoEquipmentTable');
-            tableBody.innerHTML = '';
-
-            equipmentList.forEach(eq => {
-                const row = document.createElement('tr');
-                row.innerHTML = `
-                    <td>${eq.type}</td>
-                    <td>${eq.id}</td>
-                    <td>${eq.serial}</td>
-                    <td>${eq.quantity}</td>
-                    <td>${eq.status}</td>
-                `;
-                tableBody.appendChild(row);
-            });
-
-            // Mostrar o termo
-            document.getElementById('termoContainer').style.display = 'block';
         }
 
-        function generatePDF() {
+        // Atualizar status do equipamento
+        function updateEquipmentStatus(equipmentId, newStatus) {
+            database.ref('equipments/' + equipmentId).update({
+                status: newStatus,
+                lastUpdated: new Date().toISOString()
+            })
+            .then(() => {
+                updateDashboard();
+            })
+            .catch(error => {
+                console.error('Erro ao atualizar status do equipamento:', error);
+            });
+        }
+
+        // Carregar atividades
+        function loadActivities() {
+            const typeFilter = document.getElementById('activityTypeFilter').value;
+            const userFilter = document.getElementById('activityUserFilter').value.toLowerCase();
+            const dateFilter = document.getElementById('activityDateFilter').value;
+            
+            database.ref('activities').orderByChild('timestamp').once('value', snapshot => {
+                const activities = snapshot.val() || {};
+                const activityList = document.getElementById('activityList');
+                activityList.innerHTML = '';
+                
+                // Converter objeto em array e ordenar por timestamp (mais recente primeiro)
+                const activitiesArray = Object.values(activities).reverse();
+                
+                activitiesArray.forEach(activity => {
+                    // Aplicar filtros
+                    if (typeFilter !== 'all' && activity.type !== typeFilter) return;
+                    if (userFilter && !activity.user.toLowerCase().includes(userFilter)) return;
+                    if (dateFilter && !activity.timestamp.startsWith(dateFilter)) return;
+                    
+                    const activityItem = document.createElement('div');
+                    activityItem.className = 'history-item';
+                    
+                    activityItem.innerHTML = `
+                        <div class="history-date">
+                            ${formatDateTime(activity.timestamp)}
+                            <span class="badge ${getActivityBadgeClass(activity.type)}">${activity.type}</span>
+                        </div>
+                        <div class="history-action">
+                            <strong>${activity.user}</strong> ${activity.action}
+                        </div>
+                    `;
+                    
+                    activityList.appendChild(activityItem);
+                });
+            });
+        }
+
+        // Atualizar relatório
+        function updateReport() {
+            const reportType = document.getElementById('reportType').value;
+            const dateRange = document.getElementById('reportDateRange').value;
+            
+            // Mostrar/ocultar campos de data personalizada
+            if (dateRange === 'custom') {
+                document.getElementById('customDateRangeGroup').style.display = 'block';
+                document.getElementById('customDateRangeGroupEnd').style.display = 'block';
+            } else {
+                document.getElementById('customDateRangeGroup').style.display = 'none';
+                document.getElementById('customDateRangeGroupEnd').style.display = 'none';
+            }
+            
+            // Atualizar relatório com base no tipo selecionado
+            switch(reportType) {
+                case 'equipmentStatus':
+                    generateEquipmentStatusReport();
+                    break;
+                case 'reservationsByMonth':
+                    generateReservationsByMonthReport();
+                    break;
+                case 'maintenanceHistory':
+                    generateMaintenanceHistoryReport();
+                    break;
+                case 'equipmentByLocation':
+                    generateEquipmentByLocationReport();
+                    break;
+            }
+        }
+
+        // Gerar relatório de status dos equipamentos
+        function generateEquipmentStatusReport() {
+            database.ref('equipments').once('value', snapshot => {
+                const equipments = snapshot.val() || {};
+                const equipmentTypes = {};
+                const locations = {};
+                
+                // Processar dados
+                Object.values(equipments).forEach(equipment => {
+                    // Por tipo
+                    if (!equipmentTypes[equipment.type]) {
+                        equipmentTypes[equipment.type] = {
+                            total: 0,
+                            available: 0,
+                            inUse: 0,
+                            maintenance: 0,
+                            damaged: 0
+                        };
+                    }
+                    
+                    equipmentTypes[equipment.type].total++;
+                    
+                    switch(equipment.status) {
+                        case 'Disponível':
+                            equipmentTypes[equipment.type].available++;
+                            break;
+                        case 'Em uso':
+                            equipmentTypes[equipment.type].inUse++;
+                            break;
+                        case 'Manutenção':
+                            equipmentTypes[equipment.type].maintenance++;
+                            break;
+                        case 'Danificado':
+                            equipmentTypes[equipment.type].damaged++;
+                            break;
+                    }
+                    
+                    // Por localização
+                    if (!locations[equipment.location]) {
+                        locations[equipment.location] = {
+                            total: 0,
+                            available: 0,
+                            inUse: 0,
+                            maintenance: 0,
+                            damaged: 0
+                        };
+                    }
+                    
+                    locations[equipment.location].total++;
+                    
+                    switch(equipment.status) {
+                        case 'Disponível':
+                            locations[equipment.location].available++;
+                            break;
+                        case 'Em uso':
+                            locations[equipment.location].inUse++;
+                            break;
+                        case 'Manutenção':
+                            locations[equipment.location].maintenance++;
+                            break;
+                        case 'Danificado':
+                            locations[equipment.location].damaged++;
+                            break;
+                    }
+                });
+                
+                // Atualizar tabela
+                const tableHeader = document.getElementById('reportTableHeader');
+                const tableBody = document.getElementById('reportTableBody');
+                
+                tableHeader.innerHTML = `
+                    <th>Tipo/Local</th>
+                    <th>Total</th>
+                    <th>Disponíveis</th>
+                    <th>Em Uso</th>
+                    <th>Manutenção</th>
+                    <th>Danificados</th>
+                `;
+                
+                tableBody.innerHTML = '';
+                
+                // Adicionar por tipo
+                Object.keys(equipmentTypes).forEach(type => {
+                    const row = document.createElement('tr');
+                    const data = equipmentTypes[type];
+                    
+                    row.innerHTML = `
+                        <td><strong>${type}</strong></td>
+                        <td>${data.total}</td>
+                        <td>${data.available}</td>
+                        <td>${data.inUse}</td>
+                        <td>${data.maintenance}</td>
+                        <td>${data.damaged}</td>
+                    `;
+                    
+                    tableBody.appendChild(row);
+                });
+                
+                // Adicionar por localização
+                Object.keys(locations).forEach(location => {
+                    const row = document.createElement('tr');
+                    const data = locations[location];
+                    
+                    row.innerHTML = `
+                        <td><em>${location}</em></td>
+                        <td>${data.total}</td>
+                        <td>${data.available}</td>
+                        <td>${data.inUse}</td>
+                        <td>${data.maintenance}</td>
+                        <td>${data.damaged}</td>
+                    `;
+                    
+                    tableBody.appendChild(row);
+                });
+                
+                // Atualizar gráfico
+                updateReportChart(equipmentTypes, 'Tipo de Equipamento', 'Status dos Equipamentos por Tipo');
+            });
+        }
+
+        // Gerar relatório de reservas por mês
+        function generateReservationsByMonthReport() {
+            database.ref('reservations').once('value', snapshot => {
+                const reservations = snapshot.val() || {};
+                const months = {};
+                const statusCounts = {
+                    pending: 0,
+                    approved: 0,
+                    rejected: 0,
+                    completed: 0,
+                    canceled: 0
+                };
+                
+                // Processar dados
+                Object.values(reservations).forEach(reservation => {
+                    const date = new Date(reservation.createdAt);
+                    const monthYear = `${date.getMonth() + 1}/${date.getFullYear()}`;
+                    
+                    if (!months[monthYear]) {
+                        months[monthYear] = {
+                            total: 0,
+                            pending: 0,
+                            approved: 0,
+                            rejected: 0,
+                            completed: 0,
+                            canceled: 0
+                        };
+                    }
+                    
+                    months[monthYear].total++;
+                    months[monthYear][reservation.status]++;
+                    statusCounts[reservation.status]++;
+                });
+                
+                // Atualizar tabela
+                const tableHeader = document.getElementById('reportTableHeader');
+                const tableBody = document.getElementById('reportTableBody');
+                
+                tableHeader.innerHTML = `
+                    <th>Mês/Ano</th>
+                    <th>Total</th>
+                    <th>Pendentes</th>
+                    <th>Aprovadas</th>
+                    <th>Rejeitadas</th>
+                    <th>Concluídas</th>
+                    <th>Canceladas</th>
+                `;
+                
+                tableBody.innerHTML = '';
+                
+                // Adicionar por mês
+                Object.keys(months).sort().forEach(monthYear => {
+                    const row = document.createElement('tr');
+                    const data = months[monthYear];
+                    
+                    row.innerHTML = `
+                        <td>${monthYear}</td>
+                        <td>${data.total}</td>
+                        <td>${data.pending}</td>
+                        <td>${data.approved}</td>
+                        <td>${data.rejected}</td>
+                        <td>${data.completed}</td>
+                        <td>${data.canceled}</td>
+                    `;
+                    
+                    tableBody.appendChild(row);
+                });
+                
+                // Adicionar totais
+                const totalRow = document.createElement('tr');
+                totalRow.innerHTML = `
+                    <td><strong>Total Geral</strong></td>
+                    <td><strong>${Object.values(months).reduce((sum, m) => sum + m.total, 0)}</strong></td>
+                    <td><strong>${statusCounts.pending}</strong></td>
+                    <td><strong>${statusCounts.approved}</strong></td>
+                    <td><strong>${statusCounts.rejected}</strong></td>
+                    <td><strong>${statusCounts.completed}</strong></td>
+                    <td><strong>${statusCounts.canceled}</strong></td>
+                `;
+                tableBody.appendChild(totalRow);
+                
+                // Atualizar gráfico
+                updateReportChart(months, 'Mês/Ano', 'Reservas por Mês');
+            });
+        }
+
+        // Gerar relatório de histórico de manutenções
+        function generateMaintenanceHistoryReport() {
+            database.ref('maintenance').once('value', snapshot => {
+                const maintenanceRecords = snapshot.val() || {};
+                const equipmentTypes = {};
+                const statusCounts = {
+                    pending: 0,
+                    in_progress: 0,
+                    completed: 0,
+                    canceled: 0
+                };
+                
+                // Processar dados
+                Object.values(maintenanceRecords).forEach(record => {
+                    if (!equipmentTypes[record.equipmentType]) {
+                        equipmentTypes[record.equipmentType] = {
+                            total: 0,
+                            pending: 0,
+                            in_progress: 0,
+                            completed: 0,
+                            canceled: 0
+                        };
+                    }
+                    
+                    equipmentTypes[record.equipmentType].total++;
+                    equipmentTypes[record.equipmentType][record.status]++;
+                    statusCounts[record.status]++;
+                });
+                
+                // Atualizar tabela
+                const tableHeader = document.getElementById('reportTableHeader');
+                const tableBody = document.getElementById('reportTableBody');
+                
+                tableHeader.innerHTML = `
+                    <th>Tipo de Equipamento</th>
+                    <th>Total</th>
+                    <th>Pendentes</th>
+                    <th>Em Andamento</th>
+                    <th>Concluídas</th>
+                    <th>Canceladas</th>
+                `;
+                
+                tableBody.innerHTML = '';
+                
+                // Adicionar por tipo de equipamento
+                Object.keys(equipmentTypes).forEach(type => {
+                    const row = document.createElement('tr');
+                    const data = equipmentTypes[type];
+                    
+                    row.innerHTML = `
+                        <td>${type}</td>
+                        <td>${data.total}</td>
+                        <td>${data.pending}</td>
+                        <td>${data.in_progress}</td>
+                        <td>${data.completed}</td>
+                        <td>${data.canceled}</td>
+                    `;
+                    
+                    tableBody.appendChild(row);
+                });
+                
+                // Adicionar totais
+                const totalRow = document.createElement('tr');
+                totalRow.innerHTML = `
+                    <td><strong>Total Geral</strong></td>
+                    <td><strong>${Object.values(equipmentTypes).reduce((sum, e) => sum + e.total, 0)}</strong></td>
+                    <td><strong>${statusCounts.pending}</strong></td>
+                    <td><strong>${statusCounts.in_progress}</strong></td>
+                    <td><strong>${statusCounts.completed}</strong></td>
+                    <td><strong>${statusCounts.canceled}</strong></td>
+                `;
+                tableBody.appendChild(totalRow);
+                
+                // Atualizar gráfico
+                updateReportChart(equipmentTypes, 'Tipo de Equipamento', 'Manutenções por Tipo de Equipamento');
+            });
+        }
+
+        // Gerar relatório de equipamentos por localização
+        function generateEquipmentByLocationReport() {
+            database.ref('equipments').once('value', snapshot => {
+                const equipments = snapshot.val() || {};
+                const locations = {};
+                
+                // Processar dados
+                Object.values(equipments).forEach(equipment => {
+                    if (!locations[equipment.location]) {
+                        locations[equipment.location] = {};
+                    }
+                    
+                    if (!locations[equipment.location][equipment.type]) {
+                        locations[equipment.location][equipment.type] = 0;
+                    }
+                    
+                    locations[equipment.location][equipment.type]++;
+                });
+                
+                // Atualizar tabela
+                const tableHeader = document.getElementById('reportTableHeader');
+                const tableBody = document.getElementById('reportTableBody');
+                
+                // Obter todos os tipos de equipamento únicos
+                const allTypes = new Set();
+                Object.values(equipments).forEach(equipment => {
+                    allTypes.add(equipment.type);
+                });
+                
+                // Criar cabeçalho da tabela
+                tableHeader.innerHTML = '<th>Localização</th>';
+                allTypes.forEach(type => {
+                    tableHeader.innerHTML += `<th>${type}</th>`;
+                });
+                tableHeader.innerHTML += '<th>Total</th>';
+                
+                // Criar corpo da tabela
+                tableBody.innerHTML = '';
+                
+                Object.keys(locations).forEach(location => {
+                    const row = document.createElement('tr');
+                    let rowHtml = `<td>${location}</td>`;
+                    let total = 0;
+                    
+                    allTypes.forEach(type => {
+                        const count = locations[location][type] || 0;
+                        rowHtml += `<td>${count}</td>`;
+                        total += count;
+                    });
+                    
+                    rowHtml += `<td><strong>${total}</strong></td>`;
+                    row.innerHTML = rowHtml;
+                    tableBody.appendChild(row);
+                });
+                
+                // Adicionar totais
+                const totalRow = document.createElement('tr');
+                let totalRowHtml = '<td><strong>Total</strong></td>';
+                let grandTotal = 0;
+                
+                allTypes.forEach(type => {
+                    let typeTotal = 0;
+                    Object.values(locations).forEach(locationData => {
+                        typeTotal += locationData[type] || 0;
+                    });
+                    totalRowHtml += `<td><strong>${typeTotal}</strong></td>`;
+                    grandTotal += typeTotal;
+                });
+                
+                totalRowHtml += `<td><strong>${grandTotal}</strong></td>`;
+                totalRow.innerHTML = totalRowHtml;
+                tableBody.appendChild(totalRow);
+                
+                // Atualizar gráfico
+                updateReportChart(locations, 'Localização', 'Equipamentos por Localização');
+            });
+        }
+
+        // Atualizar gráfico de relatório
+        function updateReportChart(data, labelKey, title) {
+            const ctx = document.getElementById('reportChart').getContext('2d');
+            
+            // Preparar dados para o gráfico
+            const labels = Object.keys(data);
+            const datasets = [];
+            
+            // Determinar o tipo de gráfico com base nos dados
+            let chartType = 'bar';
+            let datasetConfig = {};
+            
+            if (title.includes('por Tipo') || title.includes('por Localização')) {
+                // Gráfico de barras agrupadas
+                const allStatuses = new Set();
+                
+                Object.values(data).forEach(item => {
+                    Object.keys(item).forEach(key => {
+                        if (key !== 'total') allStatuses.add(key);
+                    });
+                });
+                
+                allStatuses.forEach(status => {
+                    const statusData = labels.map(label => data[label][status] || 0);
+                    const color = getStatusColor(status);
+                    
+                    datasets.push({
+                        label: formatStatus(status),
+                        data: statusData,
+                        backgroundColor: color,
+                        borderColor: color,
+                        borderWidth: 1
+                    });
+                });
+            } else {
+                // Gráfico de linhas para tendências temporais
+                chartType = 'line';
+                const totals = labels.map(label => data[label].total);
+                
+                datasets.push({
+                    label: 'Total',
+                    data: totals,
+                    backgroundColor: 'rgba(52, 152, 219, 0.2)',
+                    borderColor: 'rgba(52, 152, 219, 1)',
+                    borderWidth: 2,
+                    fill: true
+                });
+            }
+            
+            // Criar ou atualizar gráfico
+            if (reportChart) {
+                reportChart.destroy();
+            }
+            
+            reportChart = new Chart(ctx, {
+                type: chartType,
+                data: {
+                    labels: labels,
+                    datasets: datasets
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Quantidade'
+                            }
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: labelKey
+                            }
+                        }
+                    },
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: title,
+                            font: {
+                                size: 16
+                            }
+                        },
+                        legend: {
+                            position: 'top'
+                        }
+                    }
+                }
+            });
+        }
+
+        // Gerar relatório PDF
+        function generatePDFReport() {
             const { jsPDF } = window.jspdf;
             const doc = new jsPDF();
             
-            // Título
-            doc.setFontSize(16);
-            doc.text("TERMO DE RESPONSABILIDADE PELO USO E DEVOLUÇÃO DE APARELHOS", 105, 15, null, null, 'center');
+            const reportTitle = document.getElementById('reportType').options[document.getElementById('reportType').selectedIndex].text;
+            const dateRange = document.getElementById('reportDateRange').options[document.getElementById('reportDateRange').selectedIndex].text;
             
-            // Conteúdo
+            // Adicionar cabeçalho
+            doc.setFontSize(18);
+            doc.text(`Relatório: ${reportTitle}`, 14, 20);
             doc.setFontSize(12);
-            doc.text(`Eu, ${document.getElementById('termoTeacherName').textContent}, professor(a) da turma ${document.getElementById('termoClass').textContent}, declaro estar ciente e de acordo com as responsabilidades quanto ao uso dos aparelhos listados abaixo, os quais foram retirados em perfeitas condições de funcionamento.`, 15, 30, { maxWidth: 180 });
+            doc.text(`Período: ${dateRange}`, 14, 28);
+            doc.text(`Gerado em: ${formatDate(new Date().toISOString())}`, 14, 36);
+            doc.text(`Gerado por: ${currentUser.email}`, 14, 44);
             
-            doc.text("Comprometo-me a:", 15, 50);
-            doc.text("- Zelar pelo bom uso dos aparelhos sob minha posse e dos meus alunos durante o período de utilização;", 20, 60);
-            doc.text("- Devolver todos os equipamentos nas mesmas condições em que foram entregues;", 20, 70);
-            
-            doc.text("OBSERVAÇÃO: Comunicar imediatamente qualquer dano ou irregularidade ocorrida durante o uso.", 15, 85, { maxWidth: 180 });
-            
-            // Tabela de equipamentos
-            const tableData = [];
-            const equipmentRows = document.querySelectorAll('#termoEquipmentTable tr');
-            
-            equipmentRows.forEach(row => {
-                const cells = row.querySelectorAll('td');
-                if (cells.length >= 5) {
-                    tableData.push([
-                        cells[0].textContent,
-                        cells[1].textContent,
-                        cells[2].textContent,
-                        cells[3].textContent,
-                        cells[4].textContent
-                    ]);
+            // Adicionar tabela
+            const table = document.getElementById('reportTable');
+            doc.autoTable({
+                html: table,
+                startY: 50,
+                theme: 'grid',
+                headStyles: {
+                    fillColor: [44, 62, 80],
+                    textColor: 255
+                },
+                alternateRowStyles: {
+                    fillColor: [245, 247, 250]
                 }
             });
             
-            doc.autoTable({
-                head: [['Aparelho', 'N° Identificação', 'N° Série', 'Quantidade', 'Status']],
-                body: tableData,
-                startY: 95
-            });
-            
-            // Informações finais
-            const lastY = doc.lastAutoTable.finalY + 10;
-            
-            doc.text(`Assinatura do(a) Professor(a): ______`, 15, lastY);
-            doc.text(`Turma: ${document.getElementById('termoClass2').textContent}`, 15, lastY + 10);
-            
-            doc.text(`Data da Retirada: ${document.getElementById('termoWithdrawalDate').textContent}`, 15, lastY + 20);
-            doc.text(`Horário da Retirada: ${document.getElementById('termoWithdrawalTime').textContent}`, 100, lastY + 20);
-            
-            doc.text(`Data da Devolução: ${document.getElementById('termoReturnDate').textContent}`, 15, lastY + 30);
-            doc.text(`Horário da Devolução: ${document.getElementById('termoReturnTime').textContent}`, 100, lastY + 30);
-            
-            doc.text(`Período da Retirada: ${document.getElementById('termoWithdrawalPeriod').textContent}`, 15, lastY + 40);
-            doc.text(`Período da Devolução: ${document.getElementById('termoReturnPeriod').textContent}`, 100, lastY + 40);
-            
-            doc.text(`Registrado por: ${document.getElementById('termoRegistrant').textContent}`, 15, lastY + 50);
-            doc.text(`Código: ${document.getElementById('termoRegistrationCode').textContent}`, 15, lastY + 60);
-            doc.text(`Período: ${document.getElementById('termoObservationPeriod').textContent}`, 15, lastY + 70);
+            // Adicionar gráfico (como imagem)
+            const chartCanvas = document.getElementById('reportChart');
+            const chartImage = chartCanvas.toDataURL('image/png');
+            doc.addImage(chartImage, 'PNG', 15, doc.autoTable.previous.finalY + 20, 180, 100);
             
             // Salvar PDF
-            doc.save(`termo_responsabilidade_${document.getElementById('termoTeacherName').textContent}.pdf`);
+            doc.save(`Relatorio_${reportTitle.replace(/ /g, '_')}_${formatDate(new Date().toISOString(), 'YYYY-MM-DD')}.pdf`);
         }
 
-        // ==============================
-        // FUNÇÕES COMUNS (DASHBOARD, CADASTRO, RESERVAS, ETC)
-        // ==============================
-        
-        // ... (As funções restantes do sistema permanecem inalteradas) ...
-        // [Todas as outras funções JavaScript do sistema original]
+        // Exportar para Excel
+        function exportToExcel() {
+            // Implementação simplificada - na prática, você pode usar uma biblioteca como SheetJS
+            alert('Exportar para Excel será implementado aqui. Por enquanto, use a exportação para PDF.');
+        }
 
+        // Imprimir reservas
+        function printReservations() {
+            const printWindow = window.open('', '_blank');
+            printWindow.document.write(`
+                <html>
+                    <head>
+                        <title>Relatório de Reservas</title>
+                        <style>
+                            body { font-family: Arial, sans-serif; }
+                            h1 { color: #2c3e50; }
+                            table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+                            th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+                            th { background-color: #34495e; color: white; }
+                        </style>
+                    </head>
+                    <body>
+                        <h1>Relatório de Reservas</h1>
+                        <p>Gerado em: ${formatDate(new Date().toISOString())}</p>
+                        ${document.getElementById('reservations').innerHTML}
+                        <script>
+                            window.onload = function() {
+                                window.print();
+                                setTimeout(function() { window.close(); }, 1000);
+                            };
+                        </script>
+                    </body>
+                </html>
+            `);
+            printWindow.document.close();
+        }
+
+        // Visualizar detalhes da reserva
+        function viewReservationDetails(reservationId) {
+            database.ref('reservations/' + reservationId).once('value', snapshot => {
+                const reservation = snapshot.val();
+                
+                if (reservation) {
+                    alert(`Detalhes da Reserva:\n\nID: ${reservation.id}\nEquipamento: ${reservation.equipment}\nUsuário: ${reservation.user}\nData: ${formatDate(reservation.date)}\nHorário: ${reservation.startTime} - ${reservation.endTime}\nStatus: ${reservation.status}\nFinalidade: ${reservation.purpose || 'N/A'}`);
+                }
+            });
+        }
+
+        // Visualizar detalhes da manutenção
+        function viewMaintenanceDetails(maintenanceId) {
+            database.ref('maintenance/' + maintenanceId).once('value', snapshot => {
+                const maintenance = snapshot.val();
+                
+                if (maintenance) {
+                    alert(`Detalhes da Manutenção:\n\nID: ${maintenance.id}\nEquipamento: ${maintenance.equipmentType} (${maintenance.equipmentSerial})\nProblema: ${maintenance.problem}\nDiagnóstico: ${maintenance.diagnosis || 'N/A'}\nStatus: ${formatStatus(maintenance.status)}\nTécnico: ${maintenance.technician || 'N/A'}\nCusto: R$ ${maintenance.cost.toFixed(2) || '0.00'}\nRegistrado por: ${maintenance.reportedBy}\nData: ${formatDate(maintenance.registrationDate)}`);
+                }
+            });
+        }
+
+        // Abrir termo de responsabilidade
+        function openResponsibilityTerm(equipmentId) {
+            database.ref('equipments/' + equipmentId).once('value', snapshot => {
+                const equipment = snapshot.val();
+                
+                if (equipment) {
+                    // Preencher dados do termo
+                    document.getElementById('termoUserName').textContent = currentUser.email.split('@')[0];
+                    document.getElementById('termoDate').textContent = formatDate(new Date().toISOString());
+                    
+                    // Limpar tabela de equipamentos
+                    const equipmentTable = document.getElementById('termoEquipmentTable');
+                    equipmentTable.innerHTML = '';
+                    
+                    // Adicionar equipamento
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${equipment.type}</td>
+                        <td>${equipment.serialNumber}</td>
+                        <td>N/A</td>
+                        <td>${equipment.status}</td>
+                    `;
+                    equipmentTable.appendChild(row);
+                    
+                    // Mostrar modal
+                    document.getElementById('responsibilityTermModal').style.display = 'flex';
+                }
+            });
+        }
+
+        // Imprimir termo de responsabilidade
+        function printTermo() {
+            const printWindow = window.open('', '_blank');
+            printWindow.document.write(`
+                <html>
+                    <head>
+                        <title>Termo de Responsabilidade</title>
+                        <style>
+                            body { font-family: Arial, sans-serif; line-height: 1.6; }
+                            .termo-title { text-align: center; font-size: 18px; font-weight: bold; margin-bottom: 20px; color: #2c3e50; }
+                            .termo-content { line-height: 1.8; }
+                            .termo-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+                            .termo-table th, .termo-table td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+                            .termo-table th { background-color: #f2f2f2; }
+                            .termo-signature { margin-top: 40px; text-align: center; }
+                            .termo-info { display: flex; justify-content: space-between; margin-top: 20px; }
+                        </style>
+                    </head>
+                    <body>
+                        ${document.getElementById('termoContent').innerHTML}
+                        <script>
+                            window.onload = function() {
+                                window.print();
+                                setTimeout(function() { window.close(); }, 1000);
+                            };
+                        </script>
+                    </body>
+                </html>
+            `);
+            printWindow.document.close();
+        }
+
+        // Funções auxiliares
+        function formatDate(dateString, format = 'DD/MM/YYYY') {
+            if (!dateString) return 'N/A';
+            
+            const date = new Date(dateString);
+            if (isNaN(date.getTime())) return 'N/A';
+            
+            const day = date.getDate().toString().padStart(2, '0');
+            const month = (date.getMonth() + 1).toString().padStart(2, '0');
+            const year = date.getFullYear();
+            
+            if (format === 'YYYY-MM-DD') {
+                return `${year}-${month}-${day}`;
+            }
+            
+            return `${day}/${month}/${year}`;
+        }
+
+        function formatDateTime(dateTimeString) {
+            if (!dateTimeString) return 'N/A';
+            
+            const date = new Date(dateTimeString);
+            if (isNaN(date.getTime())) return 'N/A';
+            
+            const day = date.getDate().toString().padStart(2, '0');
+            const month = (date.getMonth() + 1).toString().padStart(2, '0');
+            const year = date.getFullYear();
+            const hours = date.getHours().toString().padStart(2, '0');
+            const minutes = date.getMinutes().toString().padStart(2, '0');
+            
+            return `${day}/${month}/${year} ${hours}:${minutes}`;
+        }
+
+        function getStatusClass(status) {
+            switch(status) {
+                case 'Disponível':
+                    return 'status-available';
+                case 'Em uso':
+                    return 'status-inuse';
+                case 'Manutenção':
+                    return 'status-maintenance';
+                case 'Danificado':
+                    return 'status-damaged';
+                default:
+                    return 'status-unused';
+            }
+        }
+
+        function getStatusBadgeClass(status) {
+            switch(status) {
+                case 'pending':
+                    return 'badge-warning';
+                case 'approved':
+                    return 'badge-success';
+                case 'rejected':
+                    return 'badge-danger';
+                case 'completed':
+                    return 'badge-primary';
+                case 'canceled':
+                    return 'badge-secondary';
+                default:
+                    return 'badge-info';
+            }
+        }
+
+        function getMaintenanceStatusBadgeClass(status) {
+            switch(status) {
+                case 'pending':
+                    return 'badge-warning';
+                case 'in_progress':
+                    return 'badge-primary';
+                case 'completed':
+                    return 'badge-success';
+                case 'canceled':
+                    return 'badge-danger';
+                default:
+                    return 'badge-info';
+            }
+        }
+
+        function getActivityBadgeClass(type) {
+            switch(type) {
+                case 'equipment':
+                    return 'badge-primary';
+                case 'reservation':
+                    return 'badge-success';
+                case 'maintenance':
+                    return 'badge-warning';
+                case 'user':
+                    return 'badge-info';
+                default:
+                    return 'badge-secondary';
+            }
+        }
+
+        function getStatusColor(status) {
+            switch(status) {
+                case 'available':
+                case 'Disponível':
+                case 'completed':
+                case 'approved':
+                    return 'rgba(39, 174, 96, 0.7)';
+                case 'inUse':
+                case 'Em uso':
+                case 'in_progress':
+                    return 'rgba(52, 152, 219, 0.7)';
+                case 'maintenance':
+                case 'Manutenção':
+                case 'pending':
+                    return 'rgba(243, 156, 18, 0.7)';
+                case 'damaged':
+                case 'Danificado':
+                case 'rejected':
+                case 'canceled':
+                    return 'rgba(231, 76, 60, 0.7)';
+                default:
+                    return 'rgba(149, 165, 166, 0.7)';
+            }
+        }
+
+        function formatStatus(status) {
+            const statusMap = {
+                'pending': 'Pendente',
+                'approved': 'Aprovado',
+                'rejected': 'Rejeitado',
+                'completed': 'Concluído',
+                'canceled': 'Cancelado',
+                'in_progress': 'Em Andamento',
+                'available': 'Disponível',
+                'inUse': 'Em Uso',
+                'maintenance': 'Manutenção',
+                'damaged': 'Danificado'
+            };
+            
+            return statusMap[status] || status;
+        }
     </script>
 </body>
 </html>
